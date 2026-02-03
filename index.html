@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AXOVIA CI/CD Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: #e4e4e4;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            color: #888;
+            font-size: 1rem;
+        }
+        
+        .last-updated {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #666;
+        }
+        
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .repo-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .repo-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .repo-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .repo-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #fff;
+        }
+        
+        .repo-name a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        .repo-name a:hover {
+            color: #667eea;
+        }
+        
+        .org-badge {
+            font-size: 0.75rem;
+            color: #888;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+        }
+        
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .status-success {
+            background: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+        
+        .status-failure {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+        
+        .status-pending {
+            background: rgba(234, 179, 8, 0.2);
+            color: #eab308;
+            border: 1px solid rgba(234, 179, 8, 0.3);
+        }
+        
+        .status-unknown {
+            background: rgba(156, 163, 175, 0.2);
+            color: #9ca3af;
+            border: 1px solid rgba(156, 163, 175, 0.3);
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        .status-success .status-dot { background: #22c55e; }
+        .status-failure .status-dot { background: #ef4444; }
+        .status-pending .status-dot { background: #eab308; }
+        .status-unknown .status-dot { background: #9ca3af; }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .info-section {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+        }
+        
+        .info-label {
+            color: #888;
+        }
+        
+        .info-value {
+            color: #e4e4e4;
+            text-align: right;
+            max-width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        .info-value a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .info-value a:hover {
+            text-decoration: underline;
+        }
+        
+        .commit-msg {
+            font-size: 0.85rem;
+            color: #aaa;
+            margin-top: 0.5rem;
+            padding: 0.75rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        .actions-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            transition: opacity 0.2s;
+        }
+        
+        .actions-link:hover {
+            opacity: 0.9;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: #888;
+        }
+        
+        .spinner {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            border-top-color: #667eea;
+            animation: spin 1s linear infinite;
+            margin-bottom: 1rem;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .error-msg {
+            color: #ef4444;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+        
+        .refresh-timer {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 AXOVIA Pipeline Dashboard</h1>
+            <p class="subtitle">CI/CD Status Monitoring</p>
+            <p class="last-updated" id="lastUpdated">Loading...</p>
+        </header>
+        
+        <div class="dashboard" id="dashboard">
+            <div class="loading">
+                <div class="spinner"></div>
+                <p>Loading pipeline status...</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="refresh-timer" id="refreshTimer">Next refresh: 5:00</div>
+    
+    <script>
+        const REPOS = [
+            { owner: 'Axovia-AI', repo: 'docmind-ai' },
+            { owner: 'Axovia-AI', repo: 'axovia-official-website' },
+            { owner: 'AXOVIA-ASPEN', repo: 'flipper-ai' }
+        ];
+        
+        const REFRESH_INTERVAL = 5 * 60 * 1000; // 5 minutes
+        let countdown = REFRESH_INTERVAL / 1000;
+        
+        async function fetchRepoData(owner, repo) {
+            const baseUrl = 'https://api.github.com';
+            const headers = {
+                'Accept': 'application/vnd.github.v3+json'
+            };
+            
+            try {
+                // Fetch latest commit
+                const commitsRes = await fetch(
+                    `${baseUrl}/repos/${owner}/${repo}/commits?per_page=1`,
+                    { headers }
+                );
+                const commits = await commitsRes.json();
+                
+                // Fetch workflow runs
+                const runsRes = await fetch(
+                    `${baseUrl}/repos/${owner}/${repo}/actions/runs?per_page=1`,
+                    { headers }
+                );
+                const runs = await runsRes.json();
+                
+                return {
+                    owner,
+                    repo,
+                    commit: commits[0] || null,
+                    workflowRun: runs.workflow_runs?.[0] || null,
+                    error: null
+                };
+            } catch (error) {
+                return {
+                    owner,
+                    repo,
+                    commit: null,
+                    workflowRun: null,
+                    error: error.message
+                };
+            }
+        }
+        
+        function getStatusClass(conclusion, status) {
+            if (status === 'in_progress' || status === 'queued') return 'pending';
+            if (conclusion === 'success') return 'success';
+            if (conclusion === 'failure' || conclusion === 'cancelled') return 'failure';
+            return 'unknown';
+        }
+        
+        function getStatusText(conclusion, status) {
+            if (status === 'in_progress') return 'Running';
+            if (status === 'queued') return 'Queued';
+            if (conclusion === 'success') return 'Passing';
+            if (conclusion === 'failure') return 'Failed';
+            if (conclusion === 'cancelled') return 'Cancelled';
+            return 'Unknown';
+        }
+        
+        function formatDate(dateStr) {
+            if (!dateStr) return 'N/A';
+            const date = new Date(dateStr);
+            return date.toLocaleString('en-US', {
+                month: 'short',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        }
+        
+        function timeAgo(dateStr) {
+            if (!dateStr) return '';
+            const date = new Date(dateStr);
+            const now = new Date();
+            const diff = now - date;
+            
+            const minutes = Math.floor(diff / 60000);
+            const hours = Math.floor(diff / 3600000);
+            const days = Math.floor(diff / 86400000);
+            
+            if (minutes < 1) return 'just now';
+            if (minutes < 60) return `${minutes}m ago`;
+            if (hours < 24) return `${hours}h ago`;
+            return `${days}d ago`;
+        }
+        
+        function renderCard(data) {
+            const { owner, repo, commit, workflowRun, error } = data;
+            
+            const statusClass = workflowRun 
+                ? getStatusClass(workflowRun.conclusion, workflowRun.status)
+                : 'unknown';
+            const statusText = workflowRun 
+                ? getStatusText(workflowRun.conclusion, workflowRun.status)
+                : 'No CI';
+            
+            const commitAuthor = commit?.commit?.author?.name || 'Unknown';
+            const commitMsg = commit?.commit?.message?.split('\n')[0] || 'No commits';
+            const commitSha = commit?.sha?.substring(0, 7) || '';
+            const commitDate = commit?.commit?.author?.date;
+            
+            const runDate = workflowRun?.updated_at;
+            const workflowName = workflowRun?.name || '';
+            
+            return `
+                <div class="repo-card">
+                    <div class="repo-header">
+                        <div>
+                            <span class="org-badge">${owner}</span>
+                            <h2 class="repo-name">
+                                <a href="https://github.com/${owner}/${repo}" target="_blank">${repo}</a>
+                            </h2>
+                        </div>
+                        <div class="status-badge status-${statusClass}">
+                            <span class="status-dot"></span>
+                            ${statusText}
+                        </div>
+                    </div>
+                    
+                    ${error ? `<p class="error-msg">⚠️ ${error}</p>` : ''}
+                    
+                    <div class="info-section">
+                        <div class="info-row">
+                            <span class="info-label">Latest Commit</span>
+                            <span class="info-value">
+                                <a href="https://github.com/${owner}/${repo}/commit/${commit?.sha || ''}" target="_blank">
+                                    ${commitSha}
+                                </a>
+                                ${commitDate ? `<span style="color:#666; margin-left:0.5rem">${timeAgo(commitDate)}</span>` : ''}
+                            </span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Author</span>
+                            <span class="info-value">${commitAuthor}</span>
+                        </div>
+                        ${workflowRun ? `
+                        <div class="info-row">
+                            <span class="info-label">Workflow</span>
+                            <span class="info-value">${workflowName}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Last Run</span>
+                            <span class="info-value">${formatDate(runDate)} <span style="color:#666">${timeAgo(runDate)}</span></span>
+                        </div>
+                        ` : ''}
+                    </div>
+                    
+                    <div class="commit-msg" title="${commitMsg}">
+                        💬 ${commitMsg}
+                    </div>
+                    
+                    <a class="actions-link" href="https://github.com/${owner}/${repo}/actions" target="_blank">
+                        View Workflow Runs →
+                    </a>
+                </div>
+            `;
+        }
+        
+        async function loadDashboard() {
+            const dashboard = document.getElementById('dashboard');
+            const lastUpdated = document.getElementById('lastUpdated');
+            
+            const results = await Promise.all(
+                REPOS.map(r => fetchRepoData(r.owner, r.repo))
+            );
+            
+            dashboard.innerHTML = results.map(renderCard).join('');
+            lastUpdated.textContent = `Last updated: ${new Date().toLocaleTimeString()}`;
+            
+            // Reset countdown
+            countdown = REFRESH_INTERVAL / 1000;
+        }
+        
+        function updateCountdown() {
+            const timer = document.getElementById('refreshTimer');
+            const minutes = Math.floor(countdown / 60);
+            const seconds = countdown % 60;
+            timer.textContent = `Next refresh: ${minutes}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (countdown > 0) {
+                countdown--;
+            }
+        }
+        
+        // Initial load
+        loadDashboard();
+        
+        // Auto-refresh every 5 minutes
+        setInterval(loadDashboard, REFRESH_INTERVAL);
+        
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
