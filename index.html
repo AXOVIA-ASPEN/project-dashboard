@@ -5,469 +5,788 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AXOVIA CI/CD Dashboard</title>
     <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --border-color: #30363d;
+            --text-primary: #f0f6fc;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+            --success: #238636;
+            --success-bg: rgba(35, 134, 54, 0.15);
+            --failure: #da3633;
+            --failure-bg: rgba(218, 54, 51, 0.15);
+            --pending: #d29922;
+            --pending-bg: rgba(210, 153, 34, 0.15);
+            --accent: #58a6ff;
+            --accent-hover: #79b8ff;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
             min-height: 100vh;
-            color: #e4e4e4;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
             padding: 2rem;
         }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
+
+        /* Header */
         header {
-            text-align: center;
-            margin-bottom: 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
         }
-        
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
         h1 {
-            font-size: 2.5rem;
-            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
+            font-size: 1.75rem;
+            font-weight: 600;
         }
-        
+
         .subtitle {
-            color: #888;
-            font-size: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
         }
-        
-        .last-updated {
-            margin-top: 1rem;
-            font-size: 0.85rem;
-            color: #666;
+
+        .header-stats {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
         }
-        
-        .dashboard {
+
+        .stat-box {
+            text-align: center;
+            padding: 0.75rem 1.25rem;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .stat-value.success { color: var(--success); }
+        .stat-value.failure { color: var(--failure); }
+        .stat-value.pending { color: var(--pending); }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .refresh-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.25rem;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .refresh-btn {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+        }
+
+        .refresh-btn:hover {
+            background: var(--border-color);
+        }
+
+        /* Project Cards Grid */
+        .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
             gap: 1.5rem;
         }
-        
-        .repo-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            padding: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+
+        .project-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
             transition: transform 0.2s, box-shadow 0.2s;
         }
-        
-        .repo-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+
+        .project-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
         }
-        
-        .repo-header {
+
+        .project-card.status-success { border-left: 4px solid var(--success); }
+        .project-card.status-failure { border-left: 4px solid var(--failure); }
+        .project-card.status-pending { border-left: 4px solid var(--pending); }
+        .project-card.status-unknown { border-left: 4px solid var(--text-muted); }
+
+        .card-header {
+            padding: 1.25rem;
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
         }
-        
-        .repo-name {
+
+        .project-info h2 {
             font-size: 1.25rem;
             font-weight: 600;
-            color: #fff;
+            margin-bottom: 0.25rem;
         }
-        
-        .repo-name a {
+
+        .project-info h2 a {
             color: inherit;
             text-decoration: none;
         }
-        
-        .repo-name a:hover {
-            color: #667eea;
+
+        .project-info h2 a:hover {
+            color: var(--accent);
         }
-        
-        .org-badge {
-            font-size: 0.75rem;
-            color: #888;
-            background: rgba(255, 255, 255, 0.08);
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
+
+        .org-name {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
         }
-        
+
         .status-badge {
-            display: inline-flex;
+            display: flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.5rem 1rem;
+            padding: 0.375rem 0.75rem;
             border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
+            font-size: 0.875rem;
+            font-weight: 500;
         }
-        
-        .status-success {
-            background: rgba(34, 197, 94, 0.2);
-            color: #22c55e;
-            border: 1px solid rgba(34, 197, 94, 0.3);
+
+        .status-badge.success {
+            background: var(--success-bg);
+            color: var(--success);
         }
-        
-        .status-failure {
-            background: rgba(239, 68, 68, 0.2);
-            color: #ef4444;
-            border: 1px solid rgba(239, 68, 68, 0.3);
+
+        .status-badge.failure {
+            background: var(--failure-bg);
+            color: var(--failure);
         }
-        
-        .status-pending {
-            background: rgba(234, 179, 8, 0.2);
-            color: #eab308;
-            border: 1px solid rgba(234, 179, 8, 0.3);
+
+        .status-badge.pending {
+            background: var(--pending-bg);
+            color: var(--pending);
         }
-        
-        .status-unknown {
-            background: rgba(156, 163, 175, 0.2);
-            color: #9ca3af;
-            border: 1px solid rgba(156, 163, 175, 0.3);
+
+        .status-badge.unknown {
+            background: var(--bg-tertiary);
+            color: var(--text-muted);
         }
-        
+
         .status-dot {
             width: 8px;
             height: 8px;
             border-radius: 50%;
-            animation: pulse 2s infinite;
+            background: currentColor;
         }
-        
-        .status-success .status-dot { background: #22c55e; }
-        .status-failure .status-dot { background: #ef4444; }
-        .status-pending .status-dot { background: #eab308; }
-        .status-unknown .status-dot { background: #9ca3af; }
-        
+
+        .status-badge.pending .status-dot {
+            animation: pulse 1.5s infinite;
+        }
+
         @keyframes pulse {
             0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
+            50% { opacity: 0.4; }
         }
-        
-        .info-section {
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+        /* Pipeline Stats Row */
+        .pipeline-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: var(--border-color);
         }
-        
-        .info-row {
+
+        .pipeline-stat {
+            background: var(--bg-secondary);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .pipeline-stat-value {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .pipeline-stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        /* Card Body */
+        .card-body {
+            padding: 1.25rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .info-item {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.75rem;
-            font-size: 0.9rem;
+            flex-direction: column;
+            gap: 0.25rem;
         }
-        
+
         .info-label {
-            color: #888;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-        
+
         .info-value {
-            color: #e4e4e4;
-            text-align: right;
-            max-width: 200px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
+            font-size: 0.875rem;
+            color: var(--text-primary);
         }
-        
+
         .info-value a {
-            color: #667eea;
+            color: var(--accent);
             text-decoration: none;
         }
-        
+
         .info-value a:hover {
             text-decoration: underline;
         }
-        
-        .commit-msg {
-            font-size: 0.85rem;
-            color: #aaa;
-            margin-top: 0.5rem;
+
+        .commit-message {
+            margin-top: 1rem;
             padding: 0.75rem;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
+            background: var(--bg-tertiary);
+            border-radius: 6px;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
         }
-        
-        .actions-link {
-            display: inline-block;
+
+        /* Release Info */
+        .release-info {
             margin-top: 1rem;
+            padding: 0.75rem;
+            background: rgba(88, 166, 255, 0.1);
+            border: 1px solid rgba(88, 166, 255, 0.2);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .release-tag {
+            background: var(--accent);
+            color: var(--bg-primary);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .release-name {
+            font-size: 0.875rem;
+            flex: 1;
+        }
+
+        /* Card Actions */
+        .card-actions {
+            padding: 1rem 1.25rem;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             padding: 0.5rem 1rem;
-            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-            color: #fff;
+            border-radius: 6px;
+            font-size: 0.875rem;
             text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .action-btn.primary {
+            background: var(--accent);
+            color: var(--bg-primary);
+        }
+
+        .action-btn.primary:hover {
+            background: var(--accent-hover);
+        }
+
+        .action-btn.secondary {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+
+        .action-btn.secondary:hover {
+            background: var(--border-color);
+        }
+
+        .action-btn.danger {
+            background: var(--failure-bg);
+            border: 1px solid var(--failure);
+            color: var(--failure);
+        }
+
+        .action-btn.danger:hover {
+            background: var(--failure);
+            color: white;
+        }
+
+        /* Failed Builds Section */
+        .failed-builds {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: var(--failure-bg);
+            border: 1px solid rgba(218, 54, 51, 0.3);
             border-radius: 8px;
-            font-size: 0.85rem;
-            transition: opacity 0.2s;
         }
-        
-        .actions-link:hover {
-            opacity: 0.9;
+
+        .failed-builds h4 {
+            font-size: 0.875rem;
+            color: var(--failure);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
-        
+
+        .failed-build-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(218, 54, 51, 0.2);
+            font-size: 0.875rem;
+        }
+
+        .failed-build-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Loading State */
         .loading {
-            text-align: center;
-            padding: 2rem;
-            color: #888;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+            color: var(--text-secondary);
         }
-        
+
         .spinner {
-            display: inline-block;
-            width: 24px;
-            height: 24px;
-            border: 3px solid rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border-color);
+            border-top-color: var(--accent);
             border-radius: 50%;
-            border-top-color: #667eea;
             animation: spin 1s linear infinite;
-            margin-bottom: 1rem;
         }
-        
+
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
-        
-        .error-msg {
-            color: #ef4444;
-            font-size: 0.85rem;
-            margin-top: 0.5rem;
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+            .header { flex-direction: column; gap: 1rem; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .info-grid { grid-template-columns: 1fr; }
+            .pipeline-stats { grid-template-columns: repeat(2, 1fr); }
         }
-        
-        .refresh-timer {
+
+        /* Toast Notification */
+        .toast {
             position: fixed;
-            bottom: 1rem;
-            right: 1rem;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            color: #888;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--success);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            transform: translateX(120%);
+            transition: transform 0.3s;
+            z-index: 1000;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        .toast.error {
+            border-left-color: var(--failure);
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>🚀 AXOVIA Pipeline Dashboard</h1>
-            <p class="subtitle">CI/CD Status Monitoring</p>
-            <p class="last-updated" id="lastUpdated">Loading...</p>
+            <div class="logo-section">
+                <div class="logo">🚀</div>
+                <div>
+                    <h1>AXOVIA CI/CD Dashboard</h1>
+                    <p class="subtitle">Real-time pipeline status & deployment monitoring</p>
+                </div>
+            </div>
+            
+            <div class="header-stats" id="headerStats">
+                <div class="stat-box">
+                    <div class="stat-value success" id="passingCount">-</div>
+                    <div class="stat-label">Passing</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value failure" id="failingCount">-</div>
+                    <div class="stat-label">Failing</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value pending" id="pendingCount">-</div>
+                    <div class="stat-label">Pending</div>
+                </div>
+            </div>
+
+            <div class="refresh-info">
+                <span id="lastUpdated">Loading...</span>
+                <span id="refreshTimer">Next refresh: 5:00</span>
+                <button class="refresh-btn" onclick="loadDashboard()">⟳ Refresh Now</button>
+            </div>
         </header>
-        
-        <div class="dashboard" id="dashboard">
+
+        <div class="projects-grid" id="dashboard">
             <div class="loading">
                 <div class="spinner"></div>
-                <p>Loading pipeline status...</p>
             </div>
         </div>
     </div>
-    
-    <div class="refresh-timer" id="refreshTimer">Next refresh: 5:00</div>
-    
+
+    <div class="toast" id="toast"></div>
+
     <script>
+        // Configuration
         const REPOS = [
-            { owner: 'Axovia-AI', repo: 'docmind-ai' },
-            { owner: 'Axovia-AI', repo: 'axovia-official-website' },
-            { owner: 'AXOVIA-ASPEN', repo: 'flipper-ai' }
+            { owner: 'Axovia-AI', repo: 'docmind-ai', name: 'Docmind AI' },
+            { owner: 'Axovia-AI', repo: 'axovia-website', name: 'Axovia Website' },
+            { owner: 'AXOVIA-ASPEN', repo: 'flipper-ai', name: 'Flipper AI' }
         ];
+
+        // Webhook endpoint for spawning fix agents
+        const WEBHOOK_BASE = 'https://aspen-webhooks.loca.lt';
         
-        const REFRESH_INTERVAL = 5 * 60 * 1000; // 5 minutes
+        const REFRESH_INTERVAL = 5 * 60 * 1000;
         let countdown = REFRESH_INTERVAL / 1000;
-        
-        async function fetchRepoData(owner, repo) {
-            const baseUrl = 'https://api.github.com';
-            const headers = {
-                'Accept': 'application/vnd.github.v3+json'
-            };
+        let dashboardData = [];
+
+        // GitHub API helper
+        async function githubFetch(url) {
+            const headers = { 'Accept': 'application/vnd.github.v3+json' };
+            const res = await fetch(url, { headers });
+            if (!res.ok) throw new Error(`GitHub API error: ${res.status}`);
+            return res.json();
+        }
+
+        // Fetch comprehensive repo data
+        async function fetchRepoData(config) {
+            const { owner, repo, name } = config;
+            const base = 'https://api.github.com';
             
             try {
-                // Fetch latest commit
-                const commitsRes = await fetch(
-                    `${baseUrl}/repos/${owner}/${repo}/commits?per_page=1`,
-                    { headers }
-                );
-                const commits = await commitsRes.json();
-                
-                // Fetch workflow runs
-                const runsRes = await fetch(
-                    `${baseUrl}/repos/${owner}/${repo}/actions/runs?per_page=1`,
-                    { headers }
-                );
-                const runs = await runsRes.json();
-                
+                const [commits, runs, releases] = await Promise.all([
+                    githubFetch(`${base}/repos/${owner}/${repo}/commits?per_page=5`).catch(() => []),
+                    githubFetch(`${base}/repos/${owner}/${repo}/actions/runs?per_page=10`).catch(() => ({ workflow_runs: [] })),
+                    githubFetch(`${base}/repos/${owner}/${repo}/releases?per_page=1`).catch(() => [])
+                ]);
+
+                const workflowRuns = runs.workflow_runs || [];
+                const latestRun = workflowRuns[0];
+                const failedRuns = workflowRuns.filter(r => r.conclusion === 'failure').slice(0, 3);
+                const recentRuns = workflowRuns.slice(0, 10);
+                const passRate = recentRuns.length > 0 
+                    ? Math.round((recentRuns.filter(r => r.conclusion === 'success').length / recentRuns.length) * 100)
+                    : null;
+
                 return {
-                    owner,
-                    repo,
+                    owner, repo, name,
                     commit: commits[0] || null,
-                    workflowRun: runs.workflow_runs?.[0] || null,
+                    latestRun,
+                    failedRuns,
+                    passRate,
+                    totalRuns: workflowRuns.length,
+                    release: releases[0] || null,
                     error: null
                 };
             } catch (error) {
-                return {
-                    owner,
-                    repo,
-                    commit: null,
-                    workflowRun: null,
-                    error: error.message
-                };
+                return { owner, repo, name, error: error.message };
             }
         }
-        
-        function getStatusClass(conclusion, status) {
-            if (status === 'in_progress' || status === 'queued') return 'pending';
-            if (conclusion === 'success') return 'success';
-            if (conclusion === 'failure' || conclusion === 'cancelled') return 'failure';
+
+        // Status helpers
+        function getStatus(run) {
+            if (!run) return 'unknown';
+            if (run.status === 'in_progress' || run.status === 'queued') return 'pending';
+            if (run.conclusion === 'success') return 'success';
+            if (run.conclusion === 'failure' || run.conclusion === 'cancelled') return 'failure';
             return 'unknown';
         }
-        
-        function getStatusText(conclusion, status) {
-            if (status === 'in_progress') return 'Running';
-            if (status === 'queued') return 'Queued';
-            if (conclusion === 'success') return 'Passing';
-            if (conclusion === 'failure') return 'Failed';
-            if (conclusion === 'cancelled') return 'Cancelled';
+
+        function getStatusText(run) {
+            if (!run) return 'No CI';
+            if (run.status === 'in_progress') return 'Running';
+            if (run.status === 'queued') return 'Queued';
+            if (run.conclusion === 'success') return 'Passing';
+            if (run.conclusion === 'failure') return 'Failed';
+            if (run.conclusion === 'cancelled') return 'Cancelled';
             return 'Unknown';
         }
-        
-        function formatDate(dateStr) {
-            if (!dateStr) return 'N/A';
-            const date = new Date(dateStr);
-            return date.toLocaleString('en-US', {
-                month: 'short',
-                day: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit'
-            });
-        }
-        
+
         function timeAgo(dateStr) {
             if (!dateStr) return '';
-            const date = new Date(dateStr);
-            const now = new Date();
-            const diff = now - date;
-            
-            const minutes = Math.floor(diff / 60000);
+            const diff = Date.now() - new Date(dateStr);
+            const mins = Math.floor(diff / 60000);
             const hours = Math.floor(diff / 3600000);
             const days = Math.floor(diff / 86400000);
-            
-            if (minutes < 1) return 'just now';
-            if (minutes < 60) return `${minutes}m ago`;
+            if (mins < 1) return 'just now';
+            if (mins < 60) return `${mins}m ago`;
             if (hours < 24) return `${hours}h ago`;
             return `${days}d ago`;
         }
-        
+
+        function formatDate(dateStr) {
+            if (!dateStr) return 'N/A';
+            return new Date(dateStr).toLocaleString('en-US', {
+                month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit'
+            });
+        }
+
+        // Spawn fix agent via webhook
+        async function spawnFixAgent(owner, repo, runId) {
+            showToast(`🤖 Spawning agent to fix ${repo}...`);
+            
+            // For now, just open a new issue or trigger via URL
+            // In production, this would call our webhook server
+            window.open(`https://github.com/${owner}/${repo}/actions/runs/${runId}`, '_blank');
+            
+            // TODO: Implement actual webhook call when server is deployed to Cloud Run
+            // try {
+            //     const res = await fetch(`${WEBHOOK_BASE}/trigger-fix`, {
+            //         method: 'POST',
+            //         headers: { 'Content-Type': 'application/json' },
+            //         body: JSON.stringify({ owner, repo, runId })
+            //     });
+            //     if (res.ok) showToast('✅ Fix agent spawned successfully!');
+            // } catch (e) {
+            //     showToast('❌ Failed to spawn agent', true);
+            // }
+        }
+
+        // Toast notification
+        function showToast(message, isError = false) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.className = 'toast show' + (isError ? ' error' : '');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        // Render project card
         function renderCard(data) {
-            const { owner, repo, commit, workflowRun, error } = data;
-            
-            const statusClass = workflowRun 
-                ? getStatusClass(workflowRun.conclusion, workflowRun.status)
-                : 'unknown';
-            const statusText = workflowRun 
-                ? getStatusText(workflowRun.conclusion, workflowRun.status)
-                : 'No CI';
-            
-            const commitAuthor = commit?.commit?.author?.name || 'Unknown';
-            const commitMsg = commit?.commit?.message?.split('\n')[0] || 'No commits';
+            const { owner, repo, name, commit, latestRun, failedRuns, passRate, release, error } = data;
+            const status = getStatus(latestRun);
+            const statusText = getStatusText(latestRun);
+
             const commitSha = commit?.sha?.substring(0, 7) || '';
+            const commitMsg = commit?.commit?.message?.split('\n')[0] || 'No commits';
+            const commitAuthor = commit?.commit?.author?.name || 'Unknown';
             const commitDate = commit?.commit?.author?.date;
-            
-            const runDate = workflowRun?.updated_at;
-            const workflowName = workflowRun?.name || '';
-            
+
+            const runNumber = latestRun?.run_number || '-';
+            const workflowName = latestRun?.name || '-';
+            const runDate = latestRun?.updated_at;
+
             return `
-                <div class="repo-card">
-                    <div class="repo-header">
-                        <div>
-                            <span class="org-badge">${owner}</span>
-                            <h2 class="repo-name">
-                                <a href="https://github.com/${owner}/${repo}" target="_blank">${repo}</a>
-                            </h2>
+                <div class="project-card status-${status}">
+                    <div class="card-header">
+                        <div class="project-info">
+                            <h2><a href="https://github.com/${owner}/${repo}" target="_blank">${name}</a></h2>
+                            <div class="org-name">${owner}/${repo}</div>
                         </div>
-                        <div class="status-badge status-${statusClass}">
+                        <div class="status-badge ${status}">
                             <span class="status-dot"></span>
                             ${statusText}
                         </div>
                     </div>
-                    
-                    ${error ? `<p class="error-msg">⚠️ ${error}</p>` : ''}
-                    
-                    <div class="info-section">
-                        <div class="info-row">
-                            <span class="info-label">Latest Commit</span>
-                            <span class="info-value">
-                                <a href="https://github.com/${owner}/${repo}/commit/${commit?.sha || ''}" target="_blank">
-                                    ${commitSha}
-                                </a>
-                                ${commitDate ? `<span style="color:#666; margin-left:0.5rem">${timeAgo(commitDate)}</span>` : ''}
-                            </span>
+
+                    <div class="pipeline-stats">
+                        <div class="pipeline-stat">
+                            <div class="pipeline-stat-value">#${runNumber}</div>
+                            <div class="pipeline-stat-label">Build</div>
                         </div>
-                        <div class="info-row">
-                            <span class="info-label">Author</span>
-                            <span class="info-value">${commitAuthor}</span>
+                        <div class="pipeline-stat">
+                            <div class="pipeline-stat-value" style="color: ${passRate !== null ? (passRate >= 80 ? 'var(--success)' : passRate >= 50 ? 'var(--pending)' : 'var(--failure)') : 'var(--text-muted)'}">${passRate !== null ? passRate + '%' : '-'}</div>
+                            <div class="pipeline-stat-label">Pass Rate</div>
                         </div>
-                        ${workflowRun ? `
-                        <div class="info-row">
-                            <span class="info-label">Workflow</span>
-                            <span class="info-value">${workflowName}</span>
+                        <div class="pipeline-stat">
+                            <div class="pipeline-stat-value">${failedRuns.length}</div>
+                            <div class="pipeline-stat-label">Recent Fails</div>
                         </div>
-                        <div class="info-row">
-                            <span class="info-label">Last Run</span>
-                            <span class="info-value">${formatDate(runDate)} <span style="color:#666">${timeAgo(runDate)}</span></span>
+                        <div class="pipeline-stat">
+                            <div class="pipeline-stat-value">${timeAgo(runDate) || '-'}</div>
+                            <div class="pipeline-stat-label">Last Run</div>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        ${error ? `<p style="color: var(--failure); margin-bottom: 1rem;">⚠️ ${error}</p>` : ''}
+                        
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <span class="info-label">Latest Commit</span>
+                                <span class="info-value">
+                                    <a href="https://github.com/${owner}/${repo}/commit/${commit?.sha || ''}" target="_blank">${commitSha}</a>
+                                    <span style="color: var(--text-muted); margin-left: 0.5rem">${timeAgo(commitDate)}</span>
+                                </span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Author</span>
+                                <span class="info-value">${commitAuthor}</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Workflow</span>
+                                <span class="info-value">${workflowName}</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Last Run Time</span>
+                                <span class="info-value">${formatDate(runDate)}</span>
+                            </div>
+                        </div>
+
+                        <div class="commit-message" title="${commitMsg}">
+                            💬 ${commitMsg}
+                        </div>
+
+                        ${release ? `
+                        <div class="release-info">
+                            <span class="release-tag">${release.tag_name}</span>
+                            <span class="release-name">${release.name || 'Latest Release'}</span>
+                            <a href="${release.html_url}" target="_blank" style="color: var(--accent); font-size: 0.875rem;">View →</a>
+                        </div>
+                        ` : ''}
+
+                        ${failedRuns.length > 0 && status === 'failure' ? `
+                        <div class="failed-builds">
+                            <h4>❌ Recent Failed Builds</h4>
+                            ${failedRuns.map(run => `
+                                <div class="failed-build-item">
+                                    <span>#${run.run_number} - ${run.name}</span>
+                                    <span style="color: var(--text-muted)">${timeAgo(run.updated_at)}</span>
+                                </div>
+                            `).join('')}
                         </div>
                         ` : ''}
                     </div>
-                    
-                    <div class="commit-msg" title="${commitMsg}">
-                        💬 ${commitMsg}
+
+                    <div class="card-actions">
+                        <a href="https://github.com/${owner}/${repo}/actions" target="_blank" class="action-btn secondary">
+                            📊 View Actions
+                        </a>
+                        ${status === 'failure' ? `
+                        <button onclick="spawnFixAgent('${owner}', '${repo}', '${latestRun?.id}')" class="action-btn danger">
+                            🔧 Spawn Fix Agent
+                        </button>
+                        ` : ''}
+                        <a href="https://github.com/${owner}/${repo}/pulls" target="_blank" class="action-btn secondary">
+                            🔀 Pull Requests
+                        </a>
                     </div>
-                    
-                    <a class="actions-link" href="https://github.com/${owner}/${repo}/actions" target="_blank">
-                        View Workflow Runs →
-                    </a>
                 </div>
             `;
         }
-        
+
+        // Load dashboard
         async function loadDashboard() {
             const dashboard = document.getElementById('dashboard');
             const lastUpdated = document.getElementById('lastUpdated');
-            
-            const results = await Promise.all(
-                REPOS.map(r => fetchRepoData(r.owner, r.repo))
-            );
-            
-            dashboard.innerHTML = results.map(renderCard).join('');
+
+            dashboard.innerHTML = '<div class="loading"><div class="spinner"></div></div>';
+
+            dashboardData = await Promise.all(REPOS.map(fetchRepoData));
+
+            // Update header stats
+            const passing = dashboardData.filter(d => getStatus(d.latestRun) === 'success').length;
+            const failing = dashboardData.filter(d => getStatus(d.latestRun) === 'failure').length;
+            const pending = dashboardData.filter(d => getStatus(d.latestRun) === 'pending').length;
+
+            document.getElementById('passingCount').textContent = passing;
+            document.getElementById('failingCount').textContent = failing;
+            document.getElementById('pendingCount').textContent = pending;
+
+            dashboard.innerHTML = dashboardData.map(renderCard).join('');
             lastUpdated.textContent = `Last updated: ${new Date().toLocaleTimeString()}`;
-            
-            // Reset countdown
             countdown = REFRESH_INTERVAL / 1000;
         }
-        
+
         function updateCountdown() {
-            const timer = document.getElementById('refreshTimer');
-            const minutes = Math.floor(countdown / 60);
-            const seconds = countdown % 60;
-            timer.textContent = `Next refresh: ${minutes}:${seconds.toString().padStart(2, '0')}`;
-            
-            if (countdown > 0) {
-                countdown--;
-            }
+            const mins = Math.floor(countdown / 60);
+            const secs = countdown % 60;
+            document.getElementById('refreshTimer').textContent = `Next refresh: ${mins}:${secs.toString().padStart(2, '0')}`;
+            if (countdown > 0) countdown--;
         }
-        
-        // Initial load
+
+        // Initialize
         loadDashboard();
-        
-        // Auto-refresh every 5 minutes
         setInterval(loadDashboard, REFRESH_INTERVAL);
-        
-        // Update countdown every second
         setInterval(updateCountdown, 1000);
     </script>
 </body>
