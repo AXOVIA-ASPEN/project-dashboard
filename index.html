@@ -530,47 +530,40 @@
         let countdown = REFRESH_INTERVAL / 1000;
         let dashboardData = [];
 
-        // GitHub API helper
-        async function githubFetch(url) {
-            const headers = { 'Accept': 'application/vnd.github.v3+json' };
-            const res = await fetch(url, { headers });
-            if (!res.ok) throw new Error(`GitHub API error: ${res.status}`);
-            return res.json();
+        // Fetch data from pre-generated JSON (updated by GitHub Action every 5 min)
+        async function fetchDashboardData() {
+            try {
+                const res = await fetch('data.json?t=' + Date.now());
+                if (!res.ok) throw new Error('Failed to load data.json');
+                return res.json();
+            } catch (error) {
+                console.error('Error loading dashboard data:', error);
+                return null;
+            }
         }
 
-        // Fetch comprehensive repo data
-        async function fetchRepoData(config) {
-            const { owner, repo, name } = config;
-            const base = 'https://api.github.com';
+        // Process repo data from JSON
+        function processRepoData(repoData) {
+            const { owner, repo, name, commits, runs, releases } = repoData;
             
-            try {
-                const [commits, runs, releases] = await Promise.all([
-                    githubFetch(`${base}/repos/${owner}/${repo}/commits?per_page=5`).catch(() => []),
-                    githubFetch(`${base}/repos/${owner}/${repo}/actions/runs?per_page=10`).catch(() => ({ workflow_runs: [] })),
-                    githubFetch(`${base}/repos/${owner}/${repo}/releases?per_page=1`).catch(() => [])
-                ]);
+            const workflowRuns = runs?.workflow_runs || [];
+            const latestRun = workflowRuns[0];
+            const failedRuns = workflowRuns.filter(r => r.conclusion === 'failure').slice(0, 3);
+            const recentRuns = workflowRuns.slice(0, 10);
+            const passRate = recentRuns.length > 0 
+                ? Math.round((recentRuns.filter(r => r.conclusion === 'success').length / recentRuns.length) * 100)
+                : null;
 
-                const workflowRuns = runs.workflow_runs || [];
-                const latestRun = workflowRuns[0];
-                const failedRuns = workflowRuns.filter(r => r.conclusion === 'failure').slice(0, 3);
-                const recentRuns = workflowRuns.slice(0, 10);
-                const passRate = recentRuns.length > 0 
-                    ? Math.round((recentRuns.filter(r => r.conclusion === 'success').length / recentRuns.length) * 100)
-                    : null;
-
-                return {
-                    owner, repo, name,
-                    commit: commits[0] || null,
-                    latestRun,
-                    failedRuns,
-                    passRate,
-                    totalRuns: workflowRuns.length,
-                    release: releases[0] || null,
-                    error: null
-                };
-            } catch (error) {
-                return { owner, repo, name, error: error.message };
-            }
+            return {
+                owner, repo, name,
+                commit: commits?.[0] || null,
+                latestRun,
+                failedRuns,
+                passRate,
+                totalRuns: workflowRuns.length,
+                release: releases?.[0] || null,
+                error: null
+            };
         }
 
         // Status helpers
@@ -761,7 +754,31 @@
 
             dashboard.innerHTML = '<div class="loading"><div class="spinner"></div></div>';
 
-            dashboardData = await Promise.all(REPOS.map(fetchRepoData));
+            // Load pre-fetched data from GitHub Action
+            const data = await fetchDashboardData();
+            
+            if (!data) {
+                // Fallback to live API (unauthenticated, may hit rate limits)
+                dashboardData = await Promise.all(REPOS.map(async (config) => {
+                    try {
+                        const base = 'https://api.github.com';
+                        const headers = { 'Accept': 'application/vnd.github.v3+json' };
+                        const [commits, runs, releases] = await Promise.all([
+                            fetch(`${base}/repos/${config.owner}/${config.repo}/commits?per_page=5`, { headers }).then(r => r.json()).catch(() => []),
+                            fetch(`${base}/repos/${config.owner}/${config.repo}/actions/runs?per_page=10`, { headers }).then(r => r.json()).catch(() => ({ workflow_runs: [] })),
+                            fetch(`${base}/repos/${config.owner}/${config.repo}/releases?per_page=1`, { headers }).then(r => r.json()).catch(() => [])
+                        ]);
+                        return processRepoData({ ...config, commits, runs, releases });
+                    } catch (e) {
+                        return { ...config, error: e.message };
+                    }
+                }));
+            } else {
+                dashboardData = data.repos.map(processRepoData);
+                // Show when data was last updated by the Action
+                const dataAge = data.updatedAt ? `Data from: ${new Date(data.updatedAt).toLocaleTimeString()}` : '';
+                document.getElementById('refreshTimer').textContent = dataAge;
+            }
 
             // Update header stats
             const passing = dashboardData.filter(d => getStatus(d.latestRun) === 'success').length;
