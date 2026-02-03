@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-03T08:36:30Z",
+  "updatedAt": "2026-02-03T09:08:28Z",
   "repos": [
     {
       "owner": "Axovia-AI",
@@ -449,6 +449,48 @@
       "name": "Flipper AI",
       "commits": [
         {
+          "sha": "365678f74176f2307d73f91ebd989bc7267355ec",
+          "node_id": "C_kwDORHcJRdoAKDM2NTY3OGY3NDE3NmYyMzA3ZDczZjkxZWJkOTg5YmM3MjY3MzU1ZWM",
+          "commit": {
+            "author": {
+              "name": "Ubuntu",
+              "email": "ubuntu@ip-172-31-13-252.us-east-2.compute.internal",
+              "date": "2026-02-03T08:41:38Z"
+            },
+            "committer": {
+              "name": "Ubuntu",
+              "email": "ubuntu@ip-172-31-13-252.us-east-2.compute.internal",
+              "date": "2026-02-03T08:41:38Z"
+            },
+            "message": "✅ [E1-F5] Set up Mercari API client\n\n- Added MERCARI to Platform enum in Prisma schema\n- Created /api/scraper/mercari route with full CRUD support\n- Implemented Mercari internal API client with browser-like headers\n- Added rate limiting detection and graceful error handling\n- Supports keyword search, category filtering, condition, price range\n- Normalizes Mercari data to Listing model\n- Stores sold listings in price history for market analysis\n- Added comprehensive test suite (12 tests, all passing)\n- Updated marketplace-scanner.ts to include MERCARI platform type\n\nAcceptance Criteria:\n✅ Can authenticate and fetch from Mercari\n✅ Handle API versioning (via headers)\n✅ Proper error handling (rate limiting, blocks, fallbacks)",
+            "tree": {
+              "sha": "48bc8c207f798ab0ff87a0b12924ff7370c9d664",
+              "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/git/trees/48bc8c207f798ab0ff87a0b12924ff7370c9d664"
+            },
+            "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/git/commits/365678f74176f2307d73f91ebd989bc7267355ec",
+            "comment_count": 0,
+            "verification": {
+              "verified": false,
+              "reason": "unsigned",
+              "signature": null,
+              "payload": null,
+              "verified_at": null
+            }
+          },
+          "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/commits/365678f74176f2307d73f91ebd989bc7267355ec",
+          "html_url": "https://github.com/AXOVIA-ASPEN/flipper-ai/commit/365678f74176f2307d73f91ebd989bc7267355ec",
+          "comments_url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/commits/365678f74176f2307d73f91ebd989bc7267355ec/comments",
+          "author": null,
+          "committer": null,
+          "parents": [
+            {
+              "sha": "c409dd8a2ab7f09d13019431da69e29c8115762f",
+              "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/commits/c409dd8a2ab7f09d13019431da69e29c8115762f",
+              "html_url": "https://github.com/AXOVIA-ASPEN/flipper-ai/commit/c409dd8a2ab7f09d13019431da69e29c8115762f"
+            }
+          ]
+        },
+        {
           "sha": "c409dd8a2ab7f09d13019431da69e29c8115762f",
           "node_id": "C_kwDORHcJRdoAKGM0MDlkZDhhMmFiN2YwOWQxMzAxOTQzMWRhNjllMjljODExNTc2MmY",
           "commit": {
@@ -613,48 +655,6 @@
               "sha": "84f30076ca87b9fd4ec1d7a3122fd729e0932ec8",
               "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/commits/84f30076ca87b9fd4ec1d7a3122fd729e0932ec8",
               "html_url": "https://github.com/AXOVIA-ASPEN/flipper-ai/commit/84f30076ca87b9fd4ec1d7a3122fd729e0932ec8"
-            }
-          ]
-        },
-        {
-          "sha": "84f30076ca87b9fd4ec1d7a3122fd729e0932ec8",
-          "node_id": "C_kwDORHcJRdoAKDg0ZjMwMDc2Y2E4N2I5ZmQ0ZWMxZDdhMzEyMmZkNzI5ZTA5MzJlYzg",
-          "commit": {
-            "author": {
-              "name": "Ubuntu",
-              "email": "ubuntu@ip-172-31-13-252.us-east-2.compute.internal",
-              "date": "2026-02-03T07:57:42Z"
-            },
-            "committer": {
-              "name": "Ubuntu",
-              "email": "ubuntu@ip-172-31-13-252.us-east-2.compute.internal",
-              "date": "2026-02-03T07:57:42Z"
-            },
-            "message": "📋 [DOCS] Add comprehensive PRD v2.0 with Stephen's vision",
-            "tree": {
-              "sha": "626100082e83bb00c556c848643d50429e6c8957",
-              "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/git/trees/626100082e83bb00c556c848643d50429e6c8957"
-            },
-            "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/git/commits/84f30076ca87b9fd4ec1d7a3122fd729e0932ec8",
-            "comment_count": 0,
-            "verification": {
-              "verified": false,
-              "reason": "unsigned",
-              "signature": null,
-              "payload": null,
-              "verified_at": null
-            }
-          },
-          "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/commits/84f30076ca87b9fd4ec1d7a3122fd729e0932ec8",
-          "html_url": "https://github.com/AXOVIA-ASPEN/flipper-ai/commit/84f30076ca87b9fd4ec1d7a3122fd729e0932ec8",
-          "comments_url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/commits/84f30076ca87b9fd4ec1d7a3122fd729e0932ec8/comments",
-          "author": null,
-          "committer": null,
-          "parents": [
-            {
-              "sha": "c975882f09a6a8a98219121a2d66f37d2abe6fe1",
-              "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/commits/c975882f09a6a8a98219121a2d66f37d2abe6fe1",
-              "html_url": "https://github.com/AXOVIA-ASPEN/flipper-ai/commit/c975882f09a6a8a98219121a2d66f37d2abe6fe1"
             }
           ]
         }
