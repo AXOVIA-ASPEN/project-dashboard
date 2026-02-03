@@ -1,40 +1,656 @@
-{"updatedAt":"2026-02-03T08:30:29Z","repos":[Fetching Axovia-AI/docmind-ai...
-{"owner":"Axovia-AI","repo":"docmind-ai","name":"Docmind AI","commits":{
-  "message": "Bad credentials",
-  "documentation_url": "https://docs.github.com/rest",
-  "status": "401"
-},"runs":{
-  "message": "Bad credentials",
-  "documentation_url": "https://docs.github.com/rest",
-  "status": "401"
-},"releases":{
-  "message": "Bad credentials",
-  "documentation_url": "https://docs.github.com/rest",
-  "status": "401"
-}},Fetching Axovia-AI/axovia-website...
-{"owner":"Axovia-AI","repo":"axovia-website","name":"Axovia Website","commits":{
-  "message": "Bad credentials",
-  "documentation_url": "https://docs.github.com/rest",
-  "status": "401"
-},"runs":{
-  "message": "Bad credentials",
-  "documentation_url": "https://docs.github.com/rest",
-  "status": "401"
-},"releases":{
-  "message": "Bad credentials",
-  "documentation_url": "https://docs.github.com/rest",
-  "status": "401"
-}},Fetching AXOVIA-ASPEN/flipper-ai...
-{"owner":"AXOVIA-ASPEN","repo":"flipper-ai","name":"Flipper AI","commits":{
-  "message": "Bad credentials",
-  "documentation_url": "https://docs.github.com/rest",
-  "status": "401"
-},"runs":{
-  "message": "Bad credentials",
-  "documentation_url": "https://docs.github.com/rest",
-  "status": "401"
-},"releases":{
-  "message": "Bad credentials",
-  "documentation_url": "https://docs.github.com/rest",
-  "status": "401"
-}}]}
+{"updatedAt":"2026-02-03T08:35:04Z","repos":[Fetching Axovia-AI/docmind-ai...
+{"owner":"Axovia-AI","repo":"docmind-ai","name":"Docmind AI","commits":[
+  {
+    "sha": "8b3238dc8f0c5240aed1fc04884683cdebbb3431",
+    "node_id": "C_kwDORGbSutoAKDhiMzIzOGRjOGYwYzUyNDBhZWQxZmMwNDg4NDY4M2NkZWJiYjM0MzE",
+    "commit": {
+      "author": {
+        "name": "ASPEN",
+        "email": "aspen@axovia.ai",
+        "date": "2026-02-03T08:17:06Z"
+      },
+      "committer": {
+        "name": "ASPEN",
+        "email": "aspen@axovia.ai",
+        "date": "2026-02-03T08:17:06Z"
+      },
+      "message": "✅ [TEST] Fix TypeScript imports and types in E2E tests\n\n- Fix path import to use * as path syntax\n- Fix ERROR_RESPONSES body types to use JSON.stringify\n- Fixes TypeScript compilation errors",
+      "tree": {
+        "sha": "c1ed4b27db0ff528bab95eb1fc028c1b12c9bd69",
+        "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/c1ed4b27db0ff528bab95eb1fc028c1b12c9bd69"
+      },
+      "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/8b3238dc8f0c5240aed1fc04884683cdebbb3431",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/8b3238dc8f0c5240aed1fc04884683cdebbb3431",
+    "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/8b3238dc8f0c5240aed1fc04884683cdebbb3431",
+    "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/8b3238dc8f0c5240aed1fc04884683cdebbb3431/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "0a991d89cafec815a7ad7b344d46a93ef17e1948",
+        "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/0a991d89cafec815a7ad7b344d46a93ef17e1948",
+        "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/0a991d89cafec815a7ad7b344d46a93ef17e1948"
+      }
+    ]
+  },
+  {
+    "sha": "0a991d89cafec815a7ad7b344d46a93ef17e1948",
+    "node_id": "C_kwDORGbSutoAKDBhOTkxZDg5Y2FmZWM4MTVhN2FkN2IzNDRkNDZhOTNlZjE3ZTE5NDg",
+    "commit": {
+      "author": {
+        "name": "ASPEN",
+        "email": "aspen@axovia.ai",
+        "date": "2026-02-03T08:15:02Z"
+      },
+      "committer": {
+        "name": "ASPEN",
+        "email": "aspen@axovia.ai",
+        "date": "2026-02-03T08:15:02Z"
+      },
+      "message": "✅ [INFRA] Add make deploy with pre-flight checks",
+      "tree": {
+        "sha": "72202ba0ec17331abd1bdb5b138faacbc3f32311",
+        "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/72202ba0ec17331abd1bdb5b138faacbc3f32311"
+      },
+      "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/0a991d89cafec815a7ad7b344d46a93ef17e1948",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/0a991d89cafec815a7ad7b344d46a93ef17e1948",
+    "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/0a991d89cafec815a7ad7b344d46a93ef17e1948",
+    "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/0a991d89cafec815a7ad7b344d46a93ef17e1948/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "8b820168b3609722518a0f8adfbecd6a2a70f00a",
+        "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/8b820168b3609722518a0f8adfbecd6a2a70f00a",
+        "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/8b820168b3609722518a0f8adfbecd6a2a70f00a"
+      }
+    ]
+  },
+  {
+    "sha": "8b820168b3609722518a0f8adfbecd6a2a70f00a",
+    "node_id": "C_kwDORGbSutoAKDhiODIwMTY4YjM2MDk3MjI1MThhMGY4YWRmYmVjZDZhMmE3MGYwMGE",
+    "commit": {
+      "author": {
+        "name": "ASPEN",
+        "email": "aspen@axovia.ai",
+        "date": "2026-02-03T08:12:37Z"
+      },
+      "committer": {
+        "name": "ASPEN",
+        "email": "aspen@axovia.ai",
+        "date": "2026-02-03T08:12:37Z"
+      },
+      "message": "✅ [FIX] Improve intent parser accuracy\n\n- Add patterns for 'from X to Y' format\n- Add patterns for 'all instances of X with Y' format\n- Fix edit type detection to use word boundaries (prevents 'update' matching 'date')\n\nBefore: 20% pass rate (1/5 easy cases)\nAfter: 80% pass rate (4/5 easy cases)",
+      "tree": {
+        "sha": "4b075c0de676f1df0229c3fe1d04c40c05e74905",
+        "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/4b075c0de676f1df0229c3fe1d04c40c05e74905"
+      },
+      "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/8b820168b3609722518a0f8adfbecd6a2a70f00a",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/8b820168b3609722518a0f8adfbecd6a2a70f00a",
+    "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/8b820168b3609722518a0f8adfbecd6a2a70f00a",
+    "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/8b820168b3609722518a0f8adfbecd6a2a70f00a/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "1c57bfd809513012775ebb6ba076c818f5554396",
+        "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/1c57bfd809513012775ebb6ba076c818f5554396",
+        "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/1c57bfd809513012775ebb6ba076c818f5554396"
+      }
+    ]
+  },
+  {
+    "sha": "1c57bfd809513012775ebb6ba076c818f5554396",
+    "node_id": "C_kwDORGbSutoAKDFjNTdiZmQ4MDk1MTMwMTI3NzVlYmI2YmEwNzZjODE4ZjU1NTQzOTY",
+    "commit": {
+      "author": {
+        "name": "ASPEN",
+        "email": "aspen@axovia.ai",
+        "date": "2026-02-03T08:08:44Z"
+      },
+      "committer": {
+        "name": "ASPEN",
+        "email": "aspen@axovia.ai",
+        "date": "2026-02-03T08:08:44Z"
+      },
+      "message": "✅ [DEPLOY] Add Cloud Run deployment config\n\n- apps/api/Dockerfile: Python 3.12-slim with FastAPI/uvicorn\n- cloudbuild.yaml: Automated build and deploy pipeline\n- docs/CLOUD_RUN_DEPLOYMENT.md: Full deployment guide\n- .env.example: Added Cloud Run environment variables\n\nReady for deployment via: gcloud builds submit --config cloudbuild.yaml",
+      "tree": {
+        "sha": "08a7576c185afa53ed0ac44c6234fc06fe2013ea",
+        "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/08a7576c185afa53ed0ac44c6234fc06fe2013ea"
+      },
+      "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/1c57bfd809513012775ebb6ba076c818f5554396",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/1c57bfd809513012775ebb6ba076c818f5554396",
+    "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/1c57bfd809513012775ebb6ba076c818f5554396",
+    "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/1c57bfd809513012775ebb6ba076c818f5554396/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "489c67b290651d4c0809de9ea7f3973dc14c8ac7",
+        "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/489c67b290651d4c0809de9ea7f3973dc14c8ac7",
+        "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/489c67b290651d4c0809de9ea7f3973dc14c8ac7"
+      }
+    ]
+  },
+  {
+    "sha": "489c67b290651d4c0809de9ea7f3973dc14c8ac7",
+    "node_id": "C_kwDORGbSutoAKDQ4OWM2N2IyOTA2NTFkNGMwODA5ZGU5ZWE3ZjM5NzNkYzE0YzhhYzc",
+    "commit": {
+      "author": {
+        "name": "ASPEN",
+        "email": "aspen@axovia.ai",
+        "date": "2026-02-03T07:07:52Z"
+      },
+      "committer": {
+        "name": "ASPEN",
+        "email": "aspen@axovia.ai",
+        "date": "2026-02-03T07:07:52Z"
+      },
+      "message": "✅ [MARKETING] Add social media content calendar",
+      "tree": {
+        "sha": "c3a984d4c4f195046c92219cbc96469ffab3cdbf",
+        "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/c3a984d4c4f195046c92219cbc96469ffab3cdbf"
+      },
+      "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/489c67b290651d4c0809de9ea7f3973dc14c8ac7",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/489c67b290651d4c0809de9ea7f3973dc14c8ac7",
+    "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/489c67b290651d4c0809de9ea7f3973dc14c8ac7",
+    "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/489c67b290651d4c0809de9ea7f3973dc14c8ac7/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "91ded32df600abb5ec3de2ff1bb1aa4e8fee95b7",
+        "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/91ded32df600abb5ec3de2ff1bb1aa4e8fee95b7",
+        "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/91ded32df600abb5ec3de2ff1bb1aa4e8fee95b7"
+      }
+    ]
+  }
+],"runs":{
+  "message": "Resource not accessible by personal access token",
+  "documentation_url": "https://docs.github.com/rest/actions/workflow-runs#list-workflow-runs-for-a-repository",
+  "status": "403"
+},"releases":[
+
+]},Fetching Axovia-AI/axovia-website...
+{"owner":"Axovia-AI","repo":"axovia-website","name":"Axovia Website","commits":[
+  {
+    "sha": "ff90cd29700b115d7089b07b4ec47898aaefa1da",
+    "node_id": "C_kwDORGjCYtoAKGZmOTBjZDI5NzAwYjExNWQ3MDg5YjA3YjRlYzQ3ODk4YWFlZmExZGE",
+    "commit": {
+      "author": {
+        "name": "Ubuntu",
+        "email": "ubuntu@ip-172-31-13-252.us-east-2.compute.internal",
+        "date": "2026-02-03T07:24:40Z"
+      },
+      "committer": {
+        "name": "Ubuntu",
+        "email": "ubuntu@ip-172-31-13-252.us-east-2.compute.internal",
+        "date": "2026-02-03T07:24:40Z"
+      },
+      "message": "✅ [INFRA] Add Firebase routing for /docmind",
+      "tree": {
+        "sha": "867bd03476139aca4dfb9de9250c2684e92bb249",
+        "url": "https://api.github.com/repos/Axovia-AI/axovia-website/git/trees/867bd03476139aca4dfb9de9250c2684e92bb249"
+      },
+      "url": "https://api.github.com/repos/Axovia-AI/axovia-website/git/commits/ff90cd29700b115d7089b07b4ec47898aaefa1da",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/Axovia-AI/axovia-website/commits/ff90cd29700b115d7089b07b4ec47898aaefa1da",
+    "html_url": "https://github.com/Axovia-AI/axovia-website/commit/ff90cd29700b115d7089b07b4ec47898aaefa1da",
+    "comments_url": "https://api.github.com/repos/Axovia-AI/axovia-website/commits/ff90cd29700b115d7089b07b4ec47898aaefa1da/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "6a3b503c8918b3ab0afd4ccf269f34068ee4eaf7",
+        "url": "https://api.github.com/repos/Axovia-AI/axovia-website/commits/6a3b503c8918b3ab0afd4ccf269f34068ee4eaf7",
+        "html_url": "https://github.com/Axovia-AI/axovia-website/commit/6a3b503c8918b3ab0afd4ccf269f34068ee4eaf7"
+      }
+    ]
+  },
+  {
+    "sha": "6a3b503c8918b3ab0afd4ccf269f34068ee4eaf7",
+    "node_id": "C_kwDORGjCYtoAKDZhM2I1MDNjODkxOGIzYWIwYWZkNGNjZjI2OWYzNDA2OGVlNGVhZjc",
+    "commit": {
+      "author": {
+        "name": "Ubuntu",
+        "email": "ubuntu@ip-172-31-13-252.us-east-2.compute.internal",
+        "date": "2026-02-03T02:05:19Z"
+      },
+      "committer": {
+        "name": "Ubuntu",
+        "email": "ubuntu@ip-172-31-13-252.us-east-2.compute.internal",
+        "date": "2026-02-03T02:05:19Z"
+      },
+      "message": "✅ [TEST] Add E2E Playwright tests\n\n- Contact form submission flow tests\n- Consultation form flow tests\n- Navigation and scroll behavior tests\n- Mobile responsive menu tests\n\nTests cover:\n- Form rendering and field validation\n- Success/error states on form submission\n- Navigation link scroll behavior\n- Mobile hamburger menu toggle\n- Header fixed positioning during scroll",
+      "tree": {
+        "sha": "08a2228e87d4432e443c8365e8d8189baa1ed643",
+        "url": "https://api.github.com/repos/Axovia-AI/axovia-website/git/trees/08a2228e87d4432e443c8365e8d8189baa1ed643"
+      },
+      "url": "https://api.github.com/repos/Axovia-AI/axovia-website/git/commits/6a3b503c8918b3ab0afd4ccf269f34068ee4eaf7",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/Axovia-AI/axovia-website/commits/6a3b503c8918b3ab0afd4ccf269f34068ee4eaf7",
+    "html_url": "https://github.com/Axovia-AI/axovia-website/commit/6a3b503c8918b3ab0afd4ccf269f34068ee4eaf7",
+    "comments_url": "https://api.github.com/repos/Axovia-AI/axovia-website/commits/6a3b503c8918b3ab0afd4ccf269f34068ee4eaf7/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "1a24b1f0e058844d66cb18ef589047124fe9b45d",
+        "url": "https://api.github.com/repos/Axovia-AI/axovia-website/commits/1a24b1f0e058844d66cb18ef589047124fe9b45d",
+        "html_url": "https://github.com/Axovia-AI/axovia-website/commit/1a24b1f0e058844d66cb18ef589047124fe9b45d"
+      }
+    ]
+  },
+  {
+    "sha": "1a24b1f0e058844d66cb18ef589047124fe9b45d",
+    "node_id": "C_kwDORGjCYtoAKDFhMjRiMWYwZTA1ODg0NGQ2NmNiMThlZjU4OTA0NzEyNGZlOWI0NWQ",
+    "commit": {
+      "author": {
+        "name": "Ubuntu",
+        "email": "ubuntu@ip-172-31-13-252.us-east-2.compute.internal",
+        "date": "2026-02-03T02:01:36Z"
+      },
+      "committer": {
+        "name": "Ubuntu",
+        "email": "ubuntu@ip-172-31-13-252.us-east-2.compute.internal",
+        "date": "2026-02-03T02:01:36Z"
+      },
+      "message": "✅ [TEST] Add unit tests for React components",
+      "tree": {
+        "sha": "cceb23ef47fc09eb43b13d238dd79bb81deb927d",
+        "url": "https://api.github.com/repos/Axovia-AI/axovia-website/git/trees/cceb23ef47fc09eb43b13d238dd79bb81deb927d"
+      },
+      "url": "https://api.github.com/repos/Axovia-AI/axovia-website/git/commits/1a24b1f0e058844d66cb18ef589047124fe9b45d",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/Axovia-AI/axovia-website/commits/1a24b1f0e058844d66cb18ef589047124fe9b45d",
+    "html_url": "https://github.com/Axovia-AI/axovia-website/commit/1a24b1f0e058844d66cb18ef589047124fe9b45d",
+    "comments_url": "https://api.github.com/repos/Axovia-AI/axovia-website/commits/1a24b1f0e058844d66cb18ef589047124fe9b45d/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "c9e8eda7525cff705dbb425367c1765a42d2c0f5",
+        "url": "https://api.github.com/repos/Axovia-AI/axovia-website/commits/c9e8eda7525cff705dbb425367c1765a42d2c0f5",
+        "html_url": "https://github.com/Axovia-AI/axovia-website/commit/c9e8eda7525cff705dbb425367c1765a42d2c0f5"
+      }
+    ]
+  },
+  {
+    "sha": "c9e8eda7525cff705dbb425367c1765a42d2c0f5",
+    "node_id": "C_kwDORGjCYtoAKGM5ZThlZGE3NTI1Y2ZmNzA1ZGJiNDI1MzY3YzE3NjVhNDJkMmMwZjU",
+    "commit": {
+      "author": {
+        "name": "Ubuntu",
+        "email": "ubuntu@ip-172-31-13-252.us-east-2.compute.internal",
+        "date": "2026-02-03T01:59:13Z"
+      },
+      "committer": {
+        "name": "Ubuntu",
+        "email": "ubuntu@ip-172-31-13-252.us-east-2.compute.internal",
+        "date": "2026-02-03T01:59:13Z"
+      },
+      "message": "✅ [TEST] Add API route tests",
+      "tree": {
+        "sha": "9bbdbf491cbc78176104a95d1854f36b560b19e0",
+        "url": "https://api.github.com/repos/Axovia-AI/axovia-website/git/trees/9bbdbf491cbc78176104a95d1854f36b560b19e0"
+      },
+      "url": "https://api.github.com/repos/Axovia-AI/axovia-website/git/commits/c9e8eda7525cff705dbb425367c1765a42d2c0f5",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/Axovia-AI/axovia-website/commits/c9e8eda7525cff705dbb425367c1765a42d2c0f5",
+    "html_url": "https://github.com/Axovia-AI/axovia-website/commit/c9e8eda7525cff705dbb425367c1765a42d2c0f5",
+    "comments_url": "https://api.github.com/repos/Axovia-AI/axovia-website/commits/c9e8eda7525cff705dbb425367c1765a42d2c0f5/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "5bfe14807117c07c8dd8e6d061aed3b59462a320",
+        "url": "https://api.github.com/repos/Axovia-AI/axovia-website/commits/5bfe14807117c07c8dd8e6d061aed3b59462a320",
+        "html_url": "https://github.com/Axovia-AI/axovia-website/commit/5bfe14807117c07c8dd8e6d061aed3b59462a320"
+      }
+    ]
+  },
+  {
+    "sha": "5bfe14807117c07c8dd8e6d061aed3b59462a320",
+    "node_id": "C_kwDORGjCYtoAKDViZmUxNDgwNzExN2MwN2M4ZGQ4ZTZkMDYxYWVkM2I1OTQ2MmEzMjA",
+    "commit": {
+      "author": {
+        "name": "Ubuntu",
+        "email": "ubuntu@ip-172-31-13-252.us-east-2.compute.internal",
+        "date": "2026-02-03T01:58:41Z"
+      },
+      "committer": {
+        "name": "Ubuntu",
+        "email": "ubuntu@ip-172-31-13-252.us-east-2.compute.internal",
+        "date": "2026-02-03T01:58:41Z"
+      },
+      "message": "✅ [AXOVIA-WEB] Fix testing infrastructure - vi.hoisted() for mock ordering",
+      "tree": {
+        "sha": "4c7b9998b1adaebc922261062c2c095a101ac861",
+        "url": "https://api.github.com/repos/Axovia-AI/axovia-website/git/trees/4c7b9998b1adaebc922261062c2c095a101ac861"
+      },
+      "url": "https://api.github.com/repos/Axovia-AI/axovia-website/git/commits/5bfe14807117c07c8dd8e6d061aed3b59462a320",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/Axovia-AI/axovia-website/commits/5bfe14807117c07c8dd8e6d061aed3b59462a320",
+    "html_url": "https://github.com/Axovia-AI/axovia-website/commit/5bfe14807117c07c8dd8e6d061aed3b59462a320",
+    "comments_url": "https://api.github.com/repos/Axovia-AI/axovia-website/commits/5bfe14807117c07c8dd8e6d061aed3b59462a320/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "186af3a2456e5d628c8cbc17dd007468b6c5167d",
+        "url": "https://api.github.com/repos/Axovia-AI/axovia-website/commits/186af3a2456e5d628c8cbc17dd007468b6c5167d",
+        "html_url": "https://github.com/Axovia-AI/axovia-website/commit/186af3a2456e5d628c8cbc17dd007468b6c5167d"
+      }
+    ]
+  }
+],"runs":{
+  "message": "Resource not accessible by personal access token",
+  "documentation_url": "https://docs.github.com/rest/actions/workflow-runs#list-workflow-runs-for-a-repository",
+  "status": "403"
+},"releases":[
+
+]},Fetching AXOVIA-ASPEN/flipper-ai...
+{"owner":"AXOVIA-ASPEN","repo":"flipper-ai","name":"Flipper AI","commits":[
+  {
+    "sha": "c409dd8a2ab7f09d13019431da69e29c8115762f",
+    "node_id": "C_kwDORHcJRdoAKGM0MDlkZDhhMmFiN2YwOWQxMzAxOTQzMWRhNjllMjljODExNTc2MmY",
+    "commit": {
+      "author": {
+        "name": "Ubuntu",
+        "email": "ubuntu@ip-172-31-13-252.us-east-2.compute.internal",
+        "date": "2026-02-03T08:34:23Z"
+      },
+      "committer": {
+        "name": "Ubuntu",
+        "email": "ubuntu@ip-172-31-13-252.us-east-2.compute.internal",
+        "date": "2026-02-03T08:34:23Z"
+      },
+      "message": "✅ [E1-F4] Add OfferUp to scraper job system\n\n- Enable OfferUp as a platform option in the scraper UI (no longer disabled)\n- Add OfferUp-specific locations (city-state format)\n- Update form submission to route to correct API endpoint based on platform\n- Dynamic subtitle updates based on selected platform\n- Platform-aware saved config handling\n- Location auto-resets when switching platforms\n\nAcceptance Criteria:\n✅ OfferUp jobs tracked in ScraperJob model (already in schema)\n✅ UI shows OfferUp as platform option\n✅ Job history and stats tracked",
+      "tree": {
+        "sha": "1008040d6d4b8197cb7f3337848a4deab53d54d1",
+        "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/git/trees/1008040d6d4b8197cb7f3337848a4deab53d54d1"
+      },
+      "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/git/commits/c409dd8a2ab7f09d13019431da69e29c8115762f",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/commits/c409dd8a2ab7f09d13019431da69e29c8115762f",
+    "html_url": "https://github.com/AXOVIA-ASPEN/flipper-ai/commit/c409dd8a2ab7f09d13019431da69e29c8115762f",
+    "comments_url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/commits/c409dd8a2ab7f09d13019431da69e29c8115762f/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "c4834676f072adc6b6b936c4a30c82f80a307e88",
+        "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/commits/c4834676f072adc6b6b936c4a30c82f80a307e88",
+        "html_url": "https://github.com/AXOVIA-ASPEN/flipper-ai/commit/c4834676f072adc6b6b936c4a30c82f80a307e88"
+      }
+    ]
+  },
+  {
+    "sha": "c4834676f072adc6b6b936c4a30c82f80a307e88",
+    "node_id": "C_kwDORHcJRdoAKGM0ODM0Njc2ZjA3MmFkYzZiNmI5MzZjNGEzMGM4MmY4MGEzMDdlODg",
+    "commit": {
+      "author": {
+        "name": "Ubuntu",
+        "email": "ubuntu@ip-172-31-13-252.us-east-2.compute.internal",
+        "date": "2026-02-03T08:21:46Z"
+      },
+      "committer": {
+        "name": "Ubuntu",
+        "email": "ubuntu@ip-172-31-13-252.us-east-2.compute.internal",
+        "date": "2026-02-03T08:21:46Z"
+      },
+      "message": "✅ [E1-F4] Parse and normalize OfferUp listing data\n\n- Add image-service.ts for downloading and caching listing images\n- Add image proxy API route at /api/images/proxy\n- Update OfferUp scraper to download/cache images\n- Add location normalization (City, State → city-st format)\n- Add image-service unit tests\n- Create public/images/listings/ cache directory\n\nAcceptance criteria:\n✅ Listings saved to database with all fields\n✅ Images downloaded/proxied\n✅ Location data normalized",
+      "tree": {
+        "sha": "bcacf2ee1e28f3b4c996f8ecf8226d273895da7f",
+        "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/git/trees/bcacf2ee1e28f3b4c996f8ecf8226d273895da7f"
+      },
+      "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/git/commits/c4834676f072adc6b6b936c4a30c82f80a307e88",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/commits/c4834676f072adc6b6b936c4a30c82f80a307e88",
+    "html_url": "https://github.com/AXOVIA-ASPEN/flipper-ai/commit/c4834676f072adc6b6b936c4a30c82f80a307e88",
+    "comments_url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/commits/c4834676f072adc6b6b936c4a30c82f80a307e88/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "4b2507f1c5511f38b95230b9ef67b391096e67ca",
+        "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/commits/4b2507f1c5511f38b95230b9ef67b391096e67ca",
+        "html_url": "https://github.com/AXOVIA-ASPEN/flipper-ai/commit/4b2507f1c5511f38b95230b9ef67b391096e67ca"
+      }
+    ]
+  },
+  {
+    "sha": "4b2507f1c5511f38b95230b9ef67b391096e67ca",
+    "node_id": "C_kwDORHcJRdoAKDRiMjUwN2YxYzU1MTFmMzhiOTUyMzBiOWVmNjdiMzkxMDk2ZTY3Y2E",
+    "commit": {
+      "author": {
+        "name": "Ubuntu",
+        "email": "ubuntu@ip-172-31-13-252.us-east-2.compute.internal",
+        "date": "2026-02-03T08:16:59Z"
+      },
+      "committer": {
+        "name": "Ubuntu",
+        "email": "ubuntu@ip-172-31-13-252.us-east-2.compute.internal",
+        "date": "2026-02-03T08:16:59Z"
+      },
+      "message": "✅ [E1-F4] Set up OfferUp API/scraping infrastructure\n\n- Created /api/scraper/offerup endpoint with Playwright-based scraping\n- Implemented rate limiting (2s delay, 3 retries with exponential backoff)\n- Added support for 14 categories and 15+ major metro locations\n- Handles blocked/captcha detection with proper 429 responses\n- Blocks unnecessary resources (images/tracking) for faster scraping\n- Extracts title, price, location, images from listing cards\n- Integrates with value-estimator for opportunity scoring\n- Creates ScraperJob records for tracking\n- Added comprehensive unit tests (17 test cases)\n\nAcceptance criteria met:\n✅ Can fetch listings from OfferUp\n✅ Respects rate limits and TOS\n✅ Error handling for blocked requests",
+      "tree": {
+        "sha": "3f5922abf1eef3bd5b2af6c1bda6bf52d3b431a6",
+        "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/git/trees/3f5922abf1eef3bd5b2af6c1bda6bf52d3b431a6"
+      },
+      "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/git/commits/4b2507f1c5511f38b95230b9ef67b391096e67ca",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/commits/4b2507f1c5511f38b95230b9ef67b391096e67ca",
+    "html_url": "https://github.com/AXOVIA-ASPEN/flipper-ai/commit/4b2507f1c5511f38b95230b9ef67b391096e67ca",
+    "comments_url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/commits/4b2507f1c5511f38b95230b9ef67b391096e67ca/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "3c5b8c22f27f06ed96ba472f8fa40a96ae14f8b1",
+        "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/commits/3c5b8c22f27f06ed96ba472f8fa40a96ae14f8b1",
+        "html_url": "https://github.com/AXOVIA-ASPEN/flipper-ai/commit/3c5b8c22f27f06ed96ba472f8fa40a96ae14f8b1"
+      }
+    ]
+  },
+  {
+    "sha": "3c5b8c22f27f06ed96ba472f8fa40a96ae14f8b1",
+    "node_id": "C_kwDORHcJRdoAKDNjNWI4YzIyZjI3ZjA2ZWQ5NmJhNDcyZjhmYTQwYTk2YWUxNGY4YjE",
+    "commit": {
+      "author": {
+        "name": "Ubuntu",
+        "email": "ubuntu@ip-172-31-13-252.us-east-2.compute.internal",
+        "date": "2026-02-03T08:07:11Z"
+      },
+      "committer": {
+        "name": "Ubuntu",
+        "email": "ubuntu@ip-172-31-13-252.us-east-2.compute.internal",
+        "date": "2026-02-03T08:07:11Z"
+      },
+      "message": "📋 [PLAN] Add Agile implementation plan with epics/features/stories",
+      "tree": {
+        "sha": "83d1edac7ca772f21931a080fd7f2c252a9df4f8",
+        "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/git/trees/83d1edac7ca772f21931a080fd7f2c252a9df4f8"
+      },
+      "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/git/commits/3c5b8c22f27f06ed96ba472f8fa40a96ae14f8b1",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/commits/3c5b8c22f27f06ed96ba472f8fa40a96ae14f8b1",
+    "html_url": "https://github.com/AXOVIA-ASPEN/flipper-ai/commit/3c5b8c22f27f06ed96ba472f8fa40a96ae14f8b1",
+    "comments_url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/commits/3c5b8c22f27f06ed96ba472f8fa40a96ae14f8b1/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "84f30076ca87b9fd4ec1d7a3122fd729e0932ec8",
+        "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/commits/84f30076ca87b9fd4ec1d7a3122fd729e0932ec8",
+        "html_url": "https://github.com/AXOVIA-ASPEN/flipper-ai/commit/84f30076ca87b9fd4ec1d7a3122fd729e0932ec8"
+      }
+    ]
+  },
+  {
+    "sha": "84f30076ca87b9fd4ec1d7a3122fd729e0932ec8",
+    "node_id": "C_kwDORHcJRdoAKDg0ZjMwMDc2Y2E4N2I5ZmQ0ZWMxZDdhMzEyMmZkNzI5ZTA5MzJlYzg",
+    "commit": {
+      "author": {
+        "name": "Ubuntu",
+        "email": "ubuntu@ip-172-31-13-252.us-east-2.compute.internal",
+        "date": "2026-02-03T07:57:42Z"
+      },
+      "committer": {
+        "name": "Ubuntu",
+        "email": "ubuntu@ip-172-31-13-252.us-east-2.compute.internal",
+        "date": "2026-02-03T07:57:42Z"
+      },
+      "message": "📋 [DOCS] Add comprehensive PRD v2.0 with Stephen's vision",
+      "tree": {
+        "sha": "626100082e83bb00c556c848643d50429e6c8957",
+        "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/git/trees/626100082e83bb00c556c848643d50429e6c8957"
+      },
+      "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/git/commits/84f30076ca87b9fd4ec1d7a3122fd729e0932ec8",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/commits/84f30076ca87b9fd4ec1d7a3122fd729e0932ec8",
+    "html_url": "https://github.com/AXOVIA-ASPEN/flipper-ai/commit/84f30076ca87b9fd4ec1d7a3122fd729e0932ec8",
+    "comments_url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/commits/84f30076ca87b9fd4ec1d7a3122fd729e0932ec8/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "c975882f09a6a8a98219121a2d66f37d2abe6fe1",
+        "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/commits/c975882f09a6a8a98219121a2d66f37d2abe6fe1",
+        "html_url": "https://github.com/AXOVIA-ASPEN/flipper-ai/commit/c975882f09a6a8a98219121a2d66f37d2abe6fe1"
+      }
+    ]
+  }
+],"runs":{
+  "total_count": 0,
+  "workflow_runs": [
+
+  ]
+},"releases":[
+
+]}]}
