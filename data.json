@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-03T10:55:22Z",
+  "updatedAt": "2026-02-03T11:38:33Z",
   "repos": [
     {
       "owner": "Axovia-AI",
@@ -449,6 +449,48 @@
       "name": "Flipper AI",
       "commits": [
         {
+          "sha": "c391b23268969a00712e702ded79df2c091e5389",
+          "node_id": "C_kwDORHcJRdoAKGMzOTFiMjMyNjg5NjlhMDA3MTJlNzAyZGVkNzlkZjJjMDkxZTUzODk",
+          "commit": {
+            "author": {
+              "name": "Ubuntu",
+              "email": "ubuntu@ip-172-31-13-252.us-east-2.compute.internal",
+              "date": "2026-02-03T11:18:56Z"
+            },
+            "committer": {
+              "name": "Ubuntu",
+              "email": "ubuntu@ip-172-31-13-252.us-east-2.compute.internal",
+              "date": "2026-02-03T11:18:56Z"
+            },
+            "message": "✅ [E1-F5] Implement Mercari data normalization",
+            "tree": {
+              "sha": "dfb4ee3192fa7d1986225c134f5892fca44be811",
+              "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/git/trees/dfb4ee3192fa7d1986225c134f5892fca44be811"
+            },
+            "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/git/commits/c391b23268969a00712e702ded79df2c091e5389",
+            "comment_count": 0,
+            "verification": {
+              "verified": false,
+              "reason": "unsigned",
+              "signature": null,
+              "payload": null,
+              "verified_at": null
+            }
+          },
+          "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/commits/c391b23268969a00712e702ded79df2c091e5389",
+          "html_url": "https://github.com/AXOVIA-ASPEN/flipper-ai/commit/c391b23268969a00712e702ded79df2c091e5389",
+          "comments_url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/commits/c391b23268969a00712e702ded79df2c091e5389/comments",
+          "author": null,
+          "committer": null,
+          "parents": [
+            {
+              "sha": "84164439ded84fe47261018702254e20b0a028d7",
+              "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/commits/84164439ded84fe47261018702254e20b0a028d7",
+              "html_url": "https://github.com/AXOVIA-ASPEN/flipper-ai/commit/84164439ded84fe47261018702254e20b0a028d7"
+            }
+          ]
+        },
+        {
           "sha": "84164439ded84fe47261018702254e20b0a028d7",
           "node_id": "C_kwDORHcJRdoAKDg0MTY0NDM5ZGVkODRmZTQ3MjYxMDE4NzAyMjU0ZTIwYjBhMDI4ZDc",
           "commit": {
@@ -613,48 +655,6 @@
               "sha": "4b2507f1c5511f38b95230b9ef67b391096e67ca",
               "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/commits/4b2507f1c5511f38b95230b9ef67b391096e67ca",
               "html_url": "https://github.com/AXOVIA-ASPEN/flipper-ai/commit/4b2507f1c5511f38b95230b9ef67b391096e67ca"
-            }
-          ]
-        },
-        {
-          "sha": "4b2507f1c5511f38b95230b9ef67b391096e67ca",
-          "node_id": "C_kwDORHcJRdoAKDRiMjUwN2YxYzU1MTFmMzhiOTUyMzBiOWVmNjdiMzkxMDk2ZTY3Y2E",
-          "commit": {
-            "author": {
-              "name": "Ubuntu",
-              "email": "ubuntu@ip-172-31-13-252.us-east-2.compute.internal",
-              "date": "2026-02-03T08:16:59Z"
-            },
-            "committer": {
-              "name": "Ubuntu",
-              "email": "ubuntu@ip-172-31-13-252.us-east-2.compute.internal",
-              "date": "2026-02-03T08:16:59Z"
-            },
-            "message": "✅ [E1-F4] Set up OfferUp API/scraping infrastructure\n\n- Created /api/scraper/offerup endpoint with Playwright-based scraping\n- Implemented rate limiting (2s delay, 3 retries with exponential backoff)\n- Added support for 14 categories and 15+ major metro locations\n- Handles blocked/captcha detection with proper 429 responses\n- Blocks unnecessary resources (images/tracking) for faster scraping\n- Extracts title, price, location, images from listing cards\n- Integrates with value-estimator for opportunity scoring\n- Creates ScraperJob records for tracking\n- Added comprehensive unit tests (17 test cases)\n\nAcceptance criteria met:\n✅ Can fetch listings from OfferUp\n✅ Respects rate limits and TOS\n✅ Error handling for blocked requests",
-            "tree": {
-              "sha": "3f5922abf1eef3bd5b2af6c1bda6bf52d3b431a6",
-              "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/git/trees/3f5922abf1eef3bd5b2af6c1bda6bf52d3b431a6"
-            },
-            "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/git/commits/4b2507f1c5511f38b95230b9ef67b391096e67ca",
-            "comment_count": 0,
-            "verification": {
-              "verified": false,
-              "reason": "unsigned",
-              "signature": null,
-              "payload": null,
-              "verified_at": null
-            }
-          },
-          "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/commits/4b2507f1c5511f38b95230b9ef67b391096e67ca",
-          "html_url": "https://github.com/AXOVIA-ASPEN/flipper-ai/commit/4b2507f1c5511f38b95230b9ef67b391096e67ca",
-          "comments_url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/commits/4b2507f1c5511f38b95230b9ef67b391096e67ca/comments",
-          "author": null,
-          "committer": null,
-          "parents": [
-            {
-              "sha": "3c5b8c22f27f06ed96ba472f8fa40a96ae14f8b1",
-              "url": "https://api.github.com/repos/AXOVIA-ASPEN/flipper-ai/commits/3c5b8c22f27f06ed96ba472f8fa40a96ae14f8b1",
-              "html_url": "https://github.com/AXOVIA-ASPEN/flipper-ai/commit/3c5b8c22f27f06ed96ba472f8fa40a96ae14f8b1"
             }
           ]
         }
