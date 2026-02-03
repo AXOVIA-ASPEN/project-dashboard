@@ -6,6 +6,8 @@ on:
   workflow_dispatch:  # Manual trigger
   push:
     branches: [main]
+    paths-ignore:
+      - 'data.json'
 
 permissions:
   contents: write
@@ -21,33 +23,36 @@ jobs:
           AXOVIA_AI_TOKEN: ${{ secrets.AXOVIA_AI_TOKEN }}
           AXOVIA_ASPEN_TOKEN: ${{ secrets.AXOVIA_ASPEN_TOKEN }}
         run: |
-          # Fetch data for each repo and combine into dashboard.json
-          
           fetch_repo() {
             local owner=$1
             local repo=$2
             local token=$3
             local name=$4
             
-            echo "Fetching $owner/$repo..."
-            
             # Commits
-            commits=$(curl -s -H "Authorization: token $token" \
+            commits=$(curl -sf -H "Authorization: token $token" \
               -H "Accept: application/vnd.github.v3+json" \
               "https://api.github.com/repos/$owner/$repo/commits?per_page=5" 2>/dev/null || echo "[]")
             
             # Workflow runs
-            runs=$(curl -s -H "Authorization: token $token" \
+            runs=$(curl -sf -H "Authorization: token $token" \
               -H "Accept: application/vnd.github.v3+json" \
               "https://api.github.com/repos/$owner/$repo/actions/runs?per_page=10" 2>/dev/null || echo '{"workflow_runs":[]}')
             
             # Releases
-            releases=$(curl -s -H "Authorization: token $token" \
+            releases=$(curl -sf -H "Authorization: token $token" \
               -H "Accept: application/vnd.github.v3+json" \
               "https://api.github.com/repos/$owner/$repo/releases?per_page=1" 2>/dev/null || echo "[]")
             
-            # Build JSON object
-            echo "{\"owner\":\"$owner\",\"repo\":\"$repo\",\"name\":\"$name\",\"commits\":$commits,\"runs\":$runs,\"releases\":$releases}"
+            # Output valid JSON
+            jq -n \
+              --arg owner "$owner" \
+              --arg repo "$repo" \
+              --arg name "$name" \
+              --argjson commits "$commits" \
+              --argjson runs "$runs" \
+              --argjson releases "$releases" \
+              '{owner: $owner, repo: $repo, name: $name, commits: $commits, runs: $runs, releases: $releases}'
           }
           
           # Fetch all repos
@@ -55,12 +60,16 @@ jobs:
           website=$(fetch_repo "Axovia-AI" "axovia-website" "$AXOVIA_AI_TOKEN" "Axovia Website")
           flipper=$(fetch_repo "AXOVIA-ASPEN" "flipper-ai" "$AXOVIA_ASPEN_TOKEN" "Flipper AI")
           
-          # Combine into array
-          echo "{\"updatedAt\":\"$(date -u +%Y-%m-%dT%H:%M:%SZ)\",\"repos\":[$docmind,$website,$flipper]}" > data.json
+          # Combine into final JSON
+          jq -n \
+            --arg updatedAt "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+            --argjson docmind "$docmind" \
+            --argjson website "$website" \
+            --argjson flipper "$flipper" \
+            '{updatedAt: $updatedAt, repos: [$docmind, $website, $flipper]}' > data.json
           
-          # Pretty print for debugging
-          cat data.json | head -c 500
-          echo "..."
+          echo "Generated data.json:"
+          jq '.updatedAt, (.repos[] | "\(.name): \(.runs.workflow_runs[0].conclusion // "no CI")")' data.json
 
       - name: Commit and push if changed
         run: |
