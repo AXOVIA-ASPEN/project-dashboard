@@ -1,11 +1,95 @@
 {
-  "updatedAt": "2026-02-04T15:03:48Z",
+  "updatedAt": "2026-02-04T15:58:18Z",
   "repos": [
     {
       "owner": "Axovia-AI",
       "repo": "docmind-ai",
       "name": "Docmind AI",
       "commits": [
+        {
+          "sha": "76447a0790557e936a7e0cd3aee3c6f3540df1ac",
+          "node_id": "C_kwDORGbSutoAKDc2NDQ3YTA3OTA1NTdlOTM2YTdlMGNkM2FlZTNjNmYzNTQwZGYxYWM",
+          "commit": {
+            "author": {
+              "name": "ASPEN",
+              "email": "aspen@axovia.ai",
+              "date": "2026-02-04T15:42:33Z"
+            },
+            "committer": {
+              "name": "ASPEN",
+              "email": "aspen@axovia.ai",
+              "date": "2026-02-04T15:42:33Z"
+            },
+            "message": "✅ [Testing] Document and demonstrate test data factories\n\n- Add comprehensive factory documentation (TESTING_FACTORIES.md)\n- Create backend factory README (apps/api/tests/factories/)\n- Create frontend factory README (src/__tests__/factories/)\n- Add example test files showing factory usage\n- Demonstrate before/after patterns\n- 18 frontend + 19 backend factories already implemented\n- Provides maintainable, type-safe test data creation\n\nTrello: https://trello.com/c/1nWavANi/163",
+            "tree": {
+              "sha": "ab29da9cde4bd488801f573c62a2a5b3b5603102",
+              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/ab29da9cde4bd488801f573c62a2a5b3b5603102"
+            },
+            "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/76447a0790557e936a7e0cd3aee3c6f3540df1ac",
+            "comment_count": 0,
+            "verification": {
+              "verified": false,
+              "reason": "unsigned",
+              "signature": null,
+              "payload": null,
+              "verified_at": null
+            }
+          },
+          "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/76447a0790557e936a7e0cd3aee3c6f3540df1ac",
+          "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/76447a0790557e936a7e0cd3aee3c6f3540df1ac",
+          "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/76447a0790557e936a7e0cd3aee3c6f3540df1ac/comments",
+          "author": null,
+          "committer": null,
+          "parents": [
+            {
+              "sha": "59c59c59a4551ec234b9a840b70aab14f3a78c68",
+              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/59c59c59a4551ec234b9a840b70aab14f3a78c68",
+              "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/59c59c59a4551ec234b9a840b70aab14f3a78c68"
+            }
+          ]
+        },
+        {
+          "sha": "59c59c59a4551ec234b9a840b70aab14f3a78c68",
+          "node_id": "C_kwDORGbSutoAKDU5YzU5YzU5YTQ1NTFlYzIzNGI5YTg0MGI3MGFhYjE0ZjNhNzhjNjg",
+          "commit": {
+            "author": {
+              "name": "ASPEN",
+              "email": "aspen@axovia.ai",
+              "date": "2026-02-04T15:21:40Z"
+            },
+            "committer": {
+              "name": "ASPEN",
+              "email": "aspen@axovia.ai",
+              "date": "2026-02-04T15:21:40Z"
+            },
+            "message": "✅ [RESEARCH] PDF/A Compliance Requirements\n\n- Created comprehensive PDF/A compliance research document\n- Covers PDF/A-1 through PDF/A-4 standards\n- Details core requirements: fonts, colors, metadata, prohibited features\n- Analyzes impact on Docmind edit engine\n- Provides verification workflow and tool recommendations\n- Includes cost-benefit analysis and phased implementation plan\n- Documents real-world use cases (legal, government, healthcare)\n\nLocation: docs/research/PDFA_COMPLIANCE.md\nTrello: https://trello.com/c/toElK6uc",
+            "tree": {
+              "sha": "76924bedf457c96f5ee48a67b928aa341ed064ef",
+              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/76924bedf457c96f5ee48a67b928aa341ed064ef"
+            },
+            "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/59c59c59a4551ec234b9a840b70aab14f3a78c68",
+            "comment_count": 0,
+            "verification": {
+              "verified": false,
+              "reason": "unsigned",
+              "signature": null,
+              "payload": null,
+              "verified_at": null
+            }
+          },
+          "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/59c59c59a4551ec234b9a840b70aab14f3a78c68",
+          "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/59c59c59a4551ec234b9a840b70aab14f3a78c68",
+          "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/59c59c59a4551ec234b9a840b70aab14f3a78c68/comments",
+          "author": null,
+          "committer": null,
+          "parents": [
+            {
+              "sha": "c71857a47170ee3c62b73e053b2672bde354a1ce",
+              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/c71857a47170ee3c62b73e053b2672bde354a1ce",
+              "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/c71857a47170ee3c62b73e053b2672bde354a1ce"
+            }
+          ]
+        },
         {
           "sha": "c71857a47170ee3c62b73e053b2672bde354a1ce",
           "node_id": "C_kwDORGbSutoAKGM3MTg1N2E0NzE3MGVlM2M2MmI3M2UwNTNiMjY3MmJkZTM1NGExY2U",
@@ -129,90 +213,6 @@
               "sha": "0070e147f362a7f8fa1a7e48082cefad10169de0",
               "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/0070e147f362a7f8fa1a7e48082cefad10169de0",
               "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/0070e147f362a7f8fa1a7e48082cefad10169de0"
-            }
-          ]
-        },
-        {
-          "sha": "0070e147f362a7f8fa1a7e48082cefad10169de0",
-          "node_id": "C_kwDORGbSutoAKDAwNzBlMTQ3ZjM2MmE3ZjhmYTFhN2U0ODA4MmNlZmFkMTAxNjlkZTA",
-          "commit": {
-            "author": {
-              "name": "ASPEN",
-              "email": "aspen@axovia.ai",
-              "date": "2026-02-04T14:04:47Z"
-            },
-            "committer": {
-              "name": "ASPEN",
-              "email": "aspen@axovia.ai",
-              "date": "2026-02-04T14:04:47Z"
-            },
-            "message": "✅ [VERIFICATION] Implement BaselineCaptureService (pdf2image + hashing)\n\n- Created comprehensive BaselineCaptureService for post-download verification\n- Supports PDF to image conversion at 150 DPI with configurable max dimensions\n- Generates multiple hash types: SHA256, perceptual (pHash), difference (dHash), average (aHash)\n- Extracts text fingerprints using PyMuPDF for content verification\n- Implements tiered storage strategy: Redis for metadata/hashes, S3 for images\n- Includes abstract BaselineStorage interface for different storage backends\n- Added MemoryBaselineStorage for testing purposes\n- Proper error handling, logging, and TTL management (24h auto-expiry)\n- Full docstrings and type hints following project conventions\n- Ready for integration with verification agent ensemble\n\nBased on specifications in planning/POST_DOWNLOAD_VERIFICATION.md\nTask: Trello card #69800638f7c3aa36fd402a72",
-            "tree": {
-              "sha": "b42e79ba7c052ec116b2a80e5a9a31f15689e8a3",
-              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/b42e79ba7c052ec116b2a80e5a9a31f15689e8a3"
-            },
-            "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/0070e147f362a7f8fa1a7e48082cefad10169de0",
-            "comment_count": 0,
-            "verification": {
-              "verified": false,
-              "reason": "unsigned",
-              "signature": null,
-              "payload": null,
-              "verified_at": null
-            }
-          },
-          "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/0070e147f362a7f8fa1a7e48082cefad10169de0",
-          "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/0070e147f362a7f8fa1a7e48082cefad10169de0",
-          "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/0070e147f362a7f8fa1a7e48082cefad10169de0/comments",
-          "author": null,
-          "committer": null,
-          "parents": [
-            {
-              "sha": "8b3238dc8f0c5240aed1fc04884683cdebbb3431",
-              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/8b3238dc8f0c5240aed1fc04884683cdebbb3431",
-              "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/8b3238dc8f0c5240aed1fc04884683cdebbb3431"
-            }
-          ]
-        },
-        {
-          "sha": "8b3238dc8f0c5240aed1fc04884683cdebbb3431",
-          "node_id": "C_kwDORGbSutoAKDhiMzIzOGRjOGYwYzUyNDBhZWQxZmMwNDg4NDY4M2NkZWJiYjM0MzE",
-          "commit": {
-            "author": {
-              "name": "ASPEN",
-              "email": "aspen@axovia.ai",
-              "date": "2026-02-03T08:17:06Z"
-            },
-            "committer": {
-              "name": "ASPEN",
-              "email": "aspen@axovia.ai",
-              "date": "2026-02-03T08:17:06Z"
-            },
-            "message": "✅ [TEST] Fix TypeScript imports and types in E2E tests\n\n- Fix path import to use * as path syntax\n- Fix ERROR_RESPONSES body types to use JSON.stringify\n- Fixes TypeScript compilation errors",
-            "tree": {
-              "sha": "c1ed4b27db0ff528bab95eb1fc028c1b12c9bd69",
-              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/c1ed4b27db0ff528bab95eb1fc028c1b12c9bd69"
-            },
-            "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/8b3238dc8f0c5240aed1fc04884683cdebbb3431",
-            "comment_count": 0,
-            "verification": {
-              "verified": false,
-              "reason": "unsigned",
-              "signature": null,
-              "payload": null,
-              "verified_at": null
-            }
-          },
-          "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/8b3238dc8f0c5240aed1fc04884683cdebbb3431",
-          "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/8b3238dc8f0c5240aed1fc04884683cdebbb3431",
-          "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/8b3238dc8f0c5240aed1fc04884683cdebbb3431/comments",
-          "author": null,
-          "committer": null,
-          "parents": [
-            {
-              "sha": "0a991d89cafec815a7ad7b344d46a93ef17e1948",
-              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/0a991d89cafec815a7ad7b344d46a93ef17e1948",
-              "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/0a991d89cafec815a7ad7b344d46a93ef17e1948"
             }
           ]
         }
