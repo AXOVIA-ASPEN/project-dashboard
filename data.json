@@ -1,11 +1,53 @@
 {
-  "updatedAt": "2026-02-04T21:41:39Z",
+  "updatedAt": "2026-02-04T21:59:18Z",
   "repos": [
     {
       "owner": "Axovia-AI",
       "repo": "docmind-ai",
       "name": "Docmind AI",
       "commits": [
+        {
+          "sha": "0056f526b610e5f16dd9e5acfd18957012df9bcc",
+          "node_id": "C_kwDORGbSutoAKDAwNTZmNTI2YjYxMGU1ZjE2ZGQ5ZTVhY2ZkMTg5NTcwMTJkZjliY2M",
+          "commit": {
+            "author": {
+              "name": "ASPEN",
+              "email": "aspen@axovia.ai",
+              "date": "2026-02-04T21:57:10Z"
+            },
+            "committer": {
+              "name": "ASPEN",
+              "email": "aspen@axovia.ai",
+              "date": "2026-02-04T21:57:10Z"
+            },
+            "message": "✅ Implement PixelDiffAgent for post-download PDF verification\n\n- Add PixelDiffAgent with SSIM, MSE, and pixel diff metrics\n- Implement grayscale conversion and image resizing\n- Add configurable thresholds tuned for real-world PDFs\n- Include fallback methods when scikit-image unavailable\n- Comprehensive error handling and logging\n- Full async/await support for integration\n\nAgent specs:\n- Weight: 30% in consensus\n- SSIM threshold: 0.98\n- MSE threshold: 50\n- Pixel diff threshold: 0.1%\n- Uses ITU-R 601-2 luma transform\n- Lanczos resampling for quality\n\nFiles:\n- backend/verification/agents/pixel_diff_agent.py (11.3 KB)\n- backend/verification/agents/__init__.py\n\nCloses Trello card #99",
+            "tree": {
+              "sha": "848481374890508f3a53ddf51d57748e6612dd2a",
+              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/848481374890508f3a53ddf51d57748e6612dd2a"
+            },
+            "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/0056f526b610e5f16dd9e5acfd18957012df9bcc",
+            "comment_count": 0,
+            "verification": {
+              "verified": false,
+              "reason": "unsigned",
+              "signature": null,
+              "payload": null,
+              "verified_at": null
+            }
+          },
+          "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/0056f526b610e5f16dd9e5acfd18957012df9bcc",
+          "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/0056f526b610e5f16dd9e5acfd18957012df9bcc",
+          "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/0056f526b610e5f16dd9e5acfd18957012df9bcc/comments",
+          "author": null,
+          "committer": null,
+          "parents": [
+            {
+              "sha": "0a7b4de1b8f467f5398d43f86ac5fd5b08fe2773",
+              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/0a7b4de1b8f467f5398d43f86ac5fd5b08fe2773",
+              "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/0a7b4de1b8f467f5398d43f86ac5fd5b08fe2773"
+            }
+          ]
+        },
         {
           "sha": "0a7b4de1b8f467f5398d43f86ac5fd5b08fe2773",
           "node_id": "C_kwDORGbSutoAKDBhN2I0ZGUxYjhmNDY3ZjUzOThkNDNmODZhYzVmZDViMDhmZTI3NzM",
@@ -171,48 +213,6 @@
               "sha": "e269d55dffafe395577af997df8b3163d45fe3c6",
               "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/e269d55dffafe395577af997df8b3163d45fe3c6",
               "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/e269d55dffafe395577af997df8b3163d45fe3c6"
-            }
-          ]
-        },
-        {
-          "sha": "e269d55dffafe395577af997df8b3163d45fe3c6",
-          "node_id": "C_kwDORGbSutoAKGUyNjlkNTVkZmZhZmUzOTU1NzdhZjk5N2RmOGIzMTYzZDQ1ZmUzYzY",
-          "commit": {
-            "author": {
-              "name": "ASPEN",
-              "email": "aspen@axovia.ai",
-              "date": "2026-02-04T20:25:37Z"
-            },
-            "committer": {
-              "name": "ASPEN",
-              "email": "aspen@axovia.ai",
-              "date": "2026-02-04T20:25:37Z"
-            },
-            "message": "✅ [TESTING] Create prompt regression test suite\n\n- Created centralized prompts module (src/prompts.py)\n- Defined all core prompts: semantic verification, intent parsing, self-correction, vision verification\n- Implemented comprehensive regression test suite (tests/regression/test_prompt_regression.py)\n- Added hash-based prompt change detection\n- Added structural validation tests (placeholders, JSON output, etc.)\n- Added version tracking and metadata tests\n- All 14 tests passing\n\nBenefits:\n- Prevents accidental prompt modifications\n- Ensures prompt structural integrity\n- Tracks prompt versions over time\n- Makes prompt changes explicit and reviewable\n\nCard: #160 on Docmind Trello board",
-            "tree": {
-              "sha": "58ae03bbb8d2c40323dbfa334123bb8e64d11018",
-              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/58ae03bbb8d2c40323dbfa334123bb8e64d11018"
-            },
-            "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/e269d55dffafe395577af997df8b3163d45fe3c6",
-            "comment_count": 0,
-            "verification": {
-              "verified": false,
-              "reason": "unsigned",
-              "signature": null,
-              "payload": null,
-              "verified_at": null
-            }
-          },
-          "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/e269d55dffafe395577af997df8b3163d45fe3c6",
-          "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/e269d55dffafe395577af997df8b3163d45fe3c6",
-          "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/e269d55dffafe395577af997df8b3163d45fe3c6/comments",
-          "author": null,
-          "committer": null,
-          "parents": [
-            {
-              "sha": "0d13d768a828bf2ec3219946cd4fe585864b344a",
-              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/0d13d768a828bf2ec3219946cd4fe585864b344a",
-              "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/0d13d768a828bf2ec3219946cd4fe585864b344a"
             }
           ]
         }
