@@ -1,11 +1,95 @@
 {
-  "updatedAt": "2026-02-04T15:58:18Z",
+  "updatedAt": "2026-02-04T17:01:30Z",
   "repos": [
     {
       "owner": "Axovia-AI",
       "repo": "docmind-ai",
       "name": "Docmind AI",
       "commits": [
+        {
+          "sha": "e249ab12542a9d0ffad97f3f42fbaffb288c1cb5",
+          "node_id": "C_kwDORGbSutoAKGUyNDlhYjEyNTQyYTlkMGZmYWQ5N2YzZjQyZmJhZmZiMjg4YzFjYjU",
+          "commit": {
+            "author": {
+              "name": "ASPEN",
+              "email": "aspen@axovia.ai",
+              "date": "2026-02-04T16:54:51Z"
+            },
+            "committer": {
+              "name": "ASPEN",
+              "email": "aspen@axovia.ai",
+              "date": "2026-02-04T16:54:51Z"
+            },
+            "message": "✅ [TESTING] Set up k6 load testing suite\n\n- Installed k6 v1.5.0\n- Created 5 test types:\n  * Smoke test (1 VU, 1 min)\n  * Load test (50 VUs, 8 min)\n  * Stress test (200 VUs, 16 min)\n  * Spike test (500 VU spike, 7 min)\n  * Soak test (50 VUs, 4 hours)\n- Added comprehensive README with usage guide\n- Created Makefile for easy test execution\n- Configured thresholds and custom metrics\n- Tests ready for API implementation\n\nCloses Trello card #161",
+            "tree": {
+              "sha": "e62af4749d32a33e37b0c68cdfc2a5ce042df53c",
+              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/e62af4749d32a33e37b0c68cdfc2a5ce042df53c"
+            },
+            "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/e249ab12542a9d0ffad97f3f42fbaffb288c1cb5",
+            "comment_count": 0,
+            "verification": {
+              "verified": false,
+              "reason": "unsigned",
+              "signature": null,
+              "payload": null,
+              "verified_at": null
+            }
+          },
+          "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/e249ab12542a9d0ffad97f3f42fbaffb288c1cb5",
+          "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/e249ab12542a9d0ffad97f3f42fbaffb288c1cb5",
+          "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/e249ab12542a9d0ffad97f3f42fbaffb288c1cb5/comments",
+          "author": null,
+          "committer": null,
+          "parents": [
+            {
+              "sha": "b7832471bcf198c774e16e69505af740940c5f74",
+              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/b7832471bcf198c774e16e69505af740940c5f74",
+              "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/b7832471bcf198c774e16e69505af740940c5f74"
+            }
+          ]
+        },
+        {
+          "sha": "b7832471bcf198c774e16e69505af740940c5f74",
+          "node_id": "C_kwDORGbSutoAKGI3ODMyNDcxYmNmMTk4Yzc3NGUxNmU2OTUwNWFmNzQwOTQwYzVmNzQ",
+          "commit": {
+            "author": {
+              "name": "ASPEN",
+              "email": "aspen@axovia.ai",
+              "date": "2026-02-04T16:02:45Z"
+            },
+            "committer": {
+              "name": "ASPEN",
+              "email": "aspen@axovia.ai",
+              "date": "2026-02-04T16:02:45Z"
+            },
+            "message": "✅ Configure axe-core for WCAG 2.1 AA accessibility testing\n\n- Updated jest.setup.ts with jest-axe configuration\n- Added comprehensive accessibility testing documentation\n- Created example accessibility tests for Button and FormInput components\n- Added accessibility quick reference guide for developers\n\nConfigured Rules:\n- WCAG 2.1 AA compliance (wcag2a, wcag2aa, wcag21a, wcag21aa)\n- Color contrast checking\n- Keyboard accessibility validation\n- ARIA attribute verification\n- Form label associations\n\nTesting:\n- Unit tests: npm run test:a11y:unit\n- E2E tests: npm run test:a11y\n- CI mode: npm run test:a11y:ci\n\nFiles Created:\n- docs/ACCESSIBILITY_TESTING.md (13KB comprehensive guide)\n- docs/ACCESSIBILITY_QUICK_REFERENCE.md (5KB quick reference)\n- src/components/__tests__/Button.accessibility.test.tsx\n- src/components/__tests__/FormInput.accessibility.test.tsx\n\nFiles Modified:\n- jest.setup.ts (added jest-axe configuration)\n\nTask: #159 - Configure axe-core for accessibility testing (WCAG 2.1 AA)\nTrello: https://trello.com/c/Tt3OrI0u",
+            "tree": {
+              "sha": "9e8eded5fd23244377e738537e00b8d7599ba045",
+              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/9e8eded5fd23244377e738537e00b8d7599ba045"
+            },
+            "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/b7832471bcf198c774e16e69505af740940c5f74",
+            "comment_count": 0,
+            "verification": {
+              "verified": false,
+              "reason": "unsigned",
+              "signature": null,
+              "payload": null,
+              "verified_at": null
+            }
+          },
+          "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/b7832471bcf198c774e16e69505af740940c5f74",
+          "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/b7832471bcf198c774e16e69505af740940c5f74",
+          "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/b7832471bcf198c774e16e69505af740940c5f74/comments",
+          "author": null,
+          "committer": null,
+          "parents": [
+            {
+              "sha": "76447a0790557e936a7e0cd3aee3c6f3540df1ac",
+              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/76447a0790557e936a7e0cd3aee3c6f3540df1ac",
+              "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/76447a0790557e936a7e0cd3aee3c6f3540df1ac"
+            }
+          ]
+        },
         {
           "sha": "76447a0790557e936a7e0cd3aee3c6f3540df1ac",
           "node_id": "C_kwDORGbSutoAKDc2NDQ3YTA3OTA1NTdlOTM2YTdlMGNkM2FlZTNjNmYzNTQwZGYxYWM",
@@ -129,90 +213,6 @@
               "sha": "fff1ed21f5eddde3c081f0b13131a812100af32b",
               "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/fff1ed21f5eddde3c081f0b13131a812100af32b",
               "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/fff1ed21f5eddde3c081f0b13131a812100af32b"
-            }
-          ]
-        },
-        {
-          "sha": "fff1ed21f5eddde3c081f0b13131a812100af32b",
-          "node_id": "C_kwDORGbSutoAKGZmZjFlZDIxZjVlZGRkZTNjMDgxZjBiMTMxMzFhODEyMTAwYWYzMmI",
-          "commit": {
-            "author": {
-              "name": "ASPEN",
-              "email": "aspen@axovia.ai",
-              "date": "2026-02-04T14:43:56Z"
-            },
-            "committer": {
-              "name": "ASPEN",
-              "email": "aspen@axovia.ai",
-              "date": "2026-02-04T14:43:56Z"
-            },
-            "message": "✅ [INFRA] Implement HybridBaselineStorage class with tiered Redis/S3 storage\n\n- Tiered storage: Redis (hot, 4h TTL) + S3 (warm, 24h TTL)\n- Fast hash lookups for quick verification passes\n- Image retrieval only on mismatch (cost-effective)\n- Mock backends for development without Redis/S3\n- Full test coverage (11 tests passing)\n- Health check for backend status\n- Factory function for easy initialization\n\nCloses Trello card #95",
-            "tree": {
-              "sha": "fec1db32ed93577391ceefeb57bc57ed4591544c",
-              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/fec1db32ed93577391ceefeb57bc57ed4591544c"
-            },
-            "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/fff1ed21f5eddde3c081f0b13131a812100af32b",
-            "comment_count": 0,
-            "verification": {
-              "verified": false,
-              "reason": "unsigned",
-              "signature": null,
-              "payload": null,
-              "verified_at": null
-            }
-          },
-          "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/fff1ed21f5eddde3c081f0b13131a812100af32b",
-          "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/fff1ed21f5eddde3c081f0b13131a812100af32b",
-          "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/fff1ed21f5eddde3c081f0b13131a812100af32b/comments",
-          "author": null,
-          "committer": null,
-          "parents": [
-            {
-              "sha": "c1d18a6bcc04103a60092641bc0e5a50a1ab50fc",
-              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/c1d18a6bcc04103a60092641bc0e5a50a1ab50fc",
-              "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/c1d18a6bcc04103a60092641bc0e5a50a1ab50fc"
-            }
-          ]
-        },
-        {
-          "sha": "c1d18a6bcc04103a60092641bc0e5a50a1ab50fc",
-          "node_id": "C_kwDORGbSutoAKGMxZDE4YTZiY2MwNDEwM2E2MDA5MjY0MWJjMGU1YTUwYTFhYjUwZmM",
-          "commit": {
-            "author": {
-              "name": "ASPEN",
-              "email": "aspen@axovia.ai",
-              "date": "2026-02-04T14:24:08Z"
-            },
-            "committer": {
-              "name": "ASPEN",
-              "email": "aspen@axovia.ai",
-              "date": "2026-02-04T14:24:08Z"
-            },
-            "message": "✅ [RESEARCH] PyMuPDF Best Practices Deep Dive\n\nComprehensive 27KB+ research document covering:\n\n- Text editing strategies (Redact+Insert, Page Recreation, Gemini Vision)\n- Font handling guidelines (Built-in, CJK, custom fonts)\n- Common issues and solutions (annotation corruption, extraction quality)\n- Performance optimization techniques\n- PDF structure preservation strategies\n- Testing recommendations and edge cases\n- Docmind implementation strategy with hybrid selector\n\nKey insights:\n- PDFs don't support in-place text editing (reconstruction required)\n- Font matching across software is difficult\n- Verification is mandatory for quality assurance\n- Hybrid approach: Start simple, fall back to expensive methods\n\nReady for implementation review.\n\nTrello Card: #76 (o2tGBkKh)",
-            "tree": {
-              "sha": "481cb1b9cad3625826f430c7b59b0a2031c8b513",
-              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/481cb1b9cad3625826f430c7b59b0a2031c8b513"
-            },
-            "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/c1d18a6bcc04103a60092641bc0e5a50a1ab50fc",
-            "comment_count": 0,
-            "verification": {
-              "verified": false,
-              "reason": "unsigned",
-              "signature": null,
-              "payload": null,
-              "verified_at": null
-            }
-          },
-          "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/c1d18a6bcc04103a60092641bc0e5a50a1ab50fc",
-          "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/c1d18a6bcc04103a60092641bc0e5a50a1ab50fc",
-          "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/c1d18a6bcc04103a60092641bc0e5a50a1ab50fc/comments",
-          "author": null,
-          "committer": null,
-          "parents": [
-            {
-              "sha": "0070e147f362a7f8fa1a7e48082cefad10169de0",
-              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/0070e147f362a7f8fa1a7e48082cefad10169de0",
-              "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/0070e147f362a7f8fa1a7e48082cefad10169de0"
             }
           ]
         }
