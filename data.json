@@ -1,11 +1,95 @@
 {
-  "updatedAt": "2026-02-04T23:00:35Z",
+  "updatedAt": "2026-02-04T23:38:16Z",
   "repos": [
     {
       "owner": "Axovia-AI",
       "repo": "docmind-ai",
       "name": "Docmind AI",
       "commits": [
+        {
+          "sha": "08ab00f613b65df681de72a78522ff0c7753cdac",
+          "node_id": "C_kwDORGbSutoAKDA4YWIwMGY2MTNiNjVkZjY4MWRlNzJhNzg1MjJmZjBjNzc1M2NkYWM",
+          "commit": {
+            "author": {
+              "name": "ASPEN",
+              "email": "aspen@axovia.ai",
+              "date": "2026-02-04T23:29:45Z"
+            },
+            "committer": {
+              "name": "ASPEN",
+              "email": "aspen@axovia.ai",
+              "date": "2026-02-04T23:29:45Z"
+            },
+            "message": "✅ [#106] Implement DownloadVerificationService main class\n\n- Created DownloadVerificationService orchestrator\n- Implements full verification pipeline:\n  * Quick hash check for exact matches (< 1ms)\n  * Visual agent consensus for hash mismatches\n  * Parallel agent execution\n  * Result caching with 1hr TTL\n  * Certificate generation for passed downloads\n- Added comprehensive docstrings and type hints\n- Includes VerificationBaseline, DownloadVerificationResult dataclasses\n- CertificateGenerator for cryptographic certificates\n- Graceful error handling for expired/missing baselines\n- Performance optimizations (caching, parallel agents)\n- Created README.md with usage examples and architecture\n- Updated __init__.py to export new classes\n\nAuthor: ASPEN 🌲\nTask: Trello #106 - Implement DownloadVerificationService main class\nPart of: POST_DOWNLOAD_VERIFICATION.md Phase 3\nCompany: Axovia AI",
+            "tree": {
+              "sha": "2de4c06a5888fb1b917ba4c87d8428ce850c9cce",
+              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/2de4c06a5888fb1b917ba4c87d8428ce850c9cce"
+            },
+            "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/08ab00f613b65df681de72a78522ff0c7753cdac",
+            "comment_count": 0,
+            "verification": {
+              "verified": false,
+              "reason": "unsigned",
+              "signature": null,
+              "payload": null,
+              "verified_at": null
+            }
+          },
+          "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/08ab00f613b65df681de72a78522ff0c7753cdac",
+          "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/08ab00f613b65df681de72a78522ff0c7753cdac",
+          "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/08ab00f613b65df681de72a78522ff0c7753cdac/comments",
+          "author": null,
+          "committer": null,
+          "parents": [
+            {
+              "sha": "f75e14a672bc3dc7ee9cfde3069653634cc4e69b",
+              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/f75e14a672bc3dc7ee9cfde3069653634cc4e69b",
+              "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/f75e14a672bc3dc7ee9cfde3069653634cc4e69b"
+            }
+          ]
+        },
+        {
+          "sha": "f75e14a672bc3dc7ee9cfde3069653634cc4e69b",
+          "node_id": "C_kwDORGbSutoAKGY3NWUxNGE2NzJiYzNkYzdlZTljZmRlMzA2OTY1MzYzNGNjNGU2OWI",
+          "commit": {
+            "author": {
+              "name": "ASPEN",
+              "email": "aspen@axovia.ai",
+              "date": "2026-02-04T23:11:38Z"
+            },
+            "committer": {
+              "name": "ASPEN",
+              "email": "aspen@axovia.ai",
+              "date": "2026-02-04T23:11:38Z"
+            },
+            "message": "✅ Implement ConsensusAgent with weighted voting\n\n- Created ConsensusAgent for multi-agent verification consensus\n- Weighted voting based on confidence scores\n- Critical failure detection (high-confidence failures override)\n- Support for SKIP and ERROR result types\n- 14 comprehensive unit tests (all passing)\n- Proper metadata tracking and failure summaries\n\nTask: Implement ConsensusAgent (weighted voting)\nTrello: https://trello.com/c/PrQ3bjS0",
+            "tree": {
+              "sha": "974421c55015c7219b56233c1e6f48aaaf6f59f3",
+              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/974421c55015c7219b56233c1e6f48aaaf6f59f3"
+            },
+            "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/f75e14a672bc3dc7ee9cfde3069653634cc4e69b",
+            "comment_count": 0,
+            "verification": {
+              "verified": false,
+              "reason": "unsigned",
+              "signature": null,
+              "payload": null,
+              "verified_at": null
+            }
+          },
+          "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/f75e14a672bc3dc7ee9cfde3069653634cc4e69b",
+          "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/f75e14a672bc3dc7ee9cfde3069653634cc4e69b",
+          "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/f75e14a672bc3dc7ee9cfde3069653634cc4e69b/comments",
+          "author": null,
+          "committer": null,
+          "parents": [
+            {
+              "sha": "486ed959f11f235823a86e8e4e4a7371bdfee7d3",
+              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/486ed959f11f235823a86e8e4e4a7371bdfee7d3",
+              "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/486ed959f11f235823a86e8e4e4a7371bdfee7d3"
+            }
+          ]
+        },
         {
           "sha": "486ed959f11f235823a86e8e4e4a7371bdfee7d3",
           "node_id": "C_kwDORGbSutoAKDQ4NmVkOTU5ZjExZjIzNTgyM2E4NmU4ZTRlNGE3MzcxYmRmZWU3ZDM",
@@ -129,90 +213,6 @@
               "sha": "0056f526b610e5f16dd9e5acfd18957012df9bcc",
               "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/0056f526b610e5f16dd9e5acfd18957012df9bcc",
               "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/0056f526b610e5f16dd9e5acfd18957012df9bcc"
-            }
-          ]
-        },
-        {
-          "sha": "0056f526b610e5f16dd9e5acfd18957012df9bcc",
-          "node_id": "C_kwDORGbSutoAKDAwNTZmNTI2YjYxMGU1ZjE2ZGQ5ZTVhY2ZkMTg5NTcwMTJkZjliY2M",
-          "commit": {
-            "author": {
-              "name": "ASPEN",
-              "email": "aspen@axovia.ai",
-              "date": "2026-02-04T21:57:10Z"
-            },
-            "committer": {
-              "name": "ASPEN",
-              "email": "aspen@axovia.ai",
-              "date": "2026-02-04T21:57:10Z"
-            },
-            "message": "✅ Implement PixelDiffAgent for post-download PDF verification\n\n- Add PixelDiffAgent with SSIM, MSE, and pixel diff metrics\n- Implement grayscale conversion and image resizing\n- Add configurable thresholds tuned for real-world PDFs\n- Include fallback methods when scikit-image unavailable\n- Comprehensive error handling and logging\n- Full async/await support for integration\n\nAgent specs:\n- Weight: 30% in consensus\n- SSIM threshold: 0.98\n- MSE threshold: 50\n- Pixel diff threshold: 0.1%\n- Uses ITU-R 601-2 luma transform\n- Lanczos resampling for quality\n\nFiles:\n- backend/verification/agents/pixel_diff_agent.py (11.3 KB)\n- backend/verification/agents/__init__.py\n\nCloses Trello card #99",
-            "tree": {
-              "sha": "848481374890508f3a53ddf51d57748e6612dd2a",
-              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/848481374890508f3a53ddf51d57748e6612dd2a"
-            },
-            "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/0056f526b610e5f16dd9e5acfd18957012df9bcc",
-            "comment_count": 0,
-            "verification": {
-              "verified": false,
-              "reason": "unsigned",
-              "signature": null,
-              "payload": null,
-              "verified_at": null
-            }
-          },
-          "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/0056f526b610e5f16dd9e5acfd18957012df9bcc",
-          "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/0056f526b610e5f16dd9e5acfd18957012df9bcc",
-          "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/0056f526b610e5f16dd9e5acfd18957012df9bcc/comments",
-          "author": null,
-          "committer": null,
-          "parents": [
-            {
-              "sha": "0a7b4de1b8f467f5398d43f86ac5fd5b08fe2773",
-              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/0a7b4de1b8f467f5398d43f86ac5fd5b08fe2773",
-              "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/0a7b4de1b8f467f5398d43f86ac5fd5b08fe2773"
-            }
-          ]
-        },
-        {
-          "sha": "0a7b4de1b8f467f5398d43f86ac5fd5b08fe2773",
-          "node_id": "C_kwDORGbSutoAKDBhN2I0ZGUxYjhmNDY3ZjUzOThkNDNmODZhYzVmZDViMDhmZTI3NzM",
-          "commit": {
-            "author": {
-              "name": "ASPEN",
-              "email": "aspen@axovia.ai",
-              "date": "2026-02-04T21:40:13Z"
-            },
-            "committer": {
-              "name": "ASPEN",
-              "email": "aspen@axovia.ai",
-              "date": "2026-02-04T21:40:13Z"
-            },
-            "message": "✅ Add baseline TTL management (24h expiry)\n\n- Added expiry checking in get_baseline() for both storage backends\n- HybridBaselineStorage now checks expires_at and auto-deletes expired baselines\n- MemoryBaselineStorage checks expiry and cleans up expired data\n- Added cleanup_expired_baselines() method to BaselineStorage interface\n- Implemented cleanup for both storage backends with proper logging\n- Comprehensive test suite with 10 tests covering expiry scenarios\n- Tests verify auto-cleanup, manual cleanup, and edge cases\n\nCloses Trello card #98",
-            "tree": {
-              "sha": "6a226589525c431f4e8077e5b84c20f1574891da",
-              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/6a226589525c431f4e8077e5b84c20f1574891da"
-            },
-            "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/0a7b4de1b8f467f5398d43f86ac5fd5b08fe2773",
-            "comment_count": 0,
-            "verification": {
-              "verified": false,
-              "reason": "unsigned",
-              "signature": null,
-              "payload": null,
-              "verified_at": null
-            }
-          },
-          "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/0a7b4de1b8f467f5398d43f86ac5fd5b08fe2773",
-          "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/0a7b4de1b8f467f5398d43f86ac5fd5b08fe2773",
-          "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/0a7b4de1b8f467f5398d43f86ac5fd5b08fe2773/comments",
-          "author": null,
-          "committer": null,
-          "parents": [
-            {
-              "sha": "ff1f95edf1c07c592ceae2e70f132444cc1c1491",
-              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/ff1f95edf1c07c592ceae2e70f132444cc1c1491",
-              "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/ff1f95edf1c07c592ceae2e70f132444cc1c1491"
             }
           ]
         }
