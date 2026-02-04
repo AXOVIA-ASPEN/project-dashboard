@@ -1,11 +1,95 @@
 {
-  "updatedAt": "2026-02-04T21:59:18Z",
+  "updatedAt": "2026-02-04T22:40:03Z",
   "repos": [
     {
       "owner": "Axovia-AI",
       "repo": "docmind-ai",
       "name": "Docmind AI",
       "commits": [
+        {
+          "sha": "97bc3daa630971cae6fb2f9913bb4de522bf4d52",
+          "node_id": "C_kwDORGbSutoAKDk3YmMzZGFhNjMwOTcxY2FlNmZiMmY5OTEzYmI0ZGU1MjJiZjRkNTI",
+          "commit": {
+            "author": {
+              "name": "ASPEN",
+              "email": "aspen@axovia.ai",
+              "date": "2026-02-04T22:35:52Z"
+            },
+            "committer": {
+              "name": "ASPEN",
+              "email": "aspen@axovia.ai",
+              "date": "2026-02-04T22:35:52Z"
+            },
+            "message": "✅ [VERIFICATION] Implement DynamicRegionMasker with comprehensive tests\n\n- Added DynamicRegionMasker class for masking dynamic PDF regions (timestamps, page numbers)\n- Supports standard regions (header 3%, footer 5%, margins)\n- Pattern-based detection with regex and relative bounds\n- Document-type presets (invoice, report, contract, generic)\n- Visualization and percentage calculation helpers\n- 29 comprehensive tests (100% pass rate)\n- Performance: <1s for 4K images\n- Full documentation in verification/README.md\n\nCloses Trello card: Implement DynamicRegionMasker",
+            "tree": {
+              "sha": "763611eb6a9598514cbb8ce59e5f0b5edc57f747",
+              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/763611eb6a9598514cbb8ce59e5f0b5edc57f747"
+            },
+            "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/97bc3daa630971cae6fb2f9913bb4de522bf4d52",
+            "comment_count": 0,
+            "verification": {
+              "verified": false,
+              "reason": "unsigned",
+              "signature": null,
+              "payload": null,
+              "verified_at": null
+            }
+          },
+          "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/97bc3daa630971cae6fb2f9913bb4de522bf4d52",
+          "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/97bc3daa630971cae6fb2f9913bb4de522bf4d52",
+          "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/97bc3daa630971cae6fb2f9913bb4de522bf4d52/comments",
+          "author": null,
+          "committer": null,
+          "parents": [
+            {
+              "sha": "74f2ea9600109c8295e19fd672f6b8062567e3ad",
+              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/74f2ea9600109c8295e19fd672f6b8062567e3ad",
+              "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/74f2ea9600109c8295e19fd672f6b8062567e3ad"
+            }
+          ]
+        },
+        {
+          "sha": "74f2ea9600109c8295e19fd672f6b8062567e3ad",
+          "node_id": "C_kwDORGbSutoAKDc0ZjJlYTk2MDAxMDljODI5NWUxOWZkNjcyZjZiODA2MjU2N2UzYWQ",
+          "commit": {
+            "author": {
+              "name": "ASPEN",
+              "email": "aspen@axovia.ai",
+              "date": "2026-02-04T22:16:13Z"
+            },
+            "committer": {
+              "name": "ASPEN",
+              "email": "aspen@axovia.ai",
+              "date": "2026-02-04T22:16:13Z"
+            },
+            "message": "✅ [VERIFICATION] Implement Redis storage for verification baselines (hot tier)\n\n- Created RedisStorage class for fast hash lookups\n- Implemented baseline metadata storage (perceptual hashes, text fingerprints)\n- Implemented page image storage (PNG bytes) with configurable TTL\n- Added verification result caching (1hr default)\n- Built-in health checks and Redis statistics monitoring\n- Comprehensive error handling with retry logic\n\nFiles:\n- backend/verification/storage/redis_storage.py (375 lines)\n- backend/verification/storage/__init__.py\n- backend/verification/storage/README.md (documentation)\n- tests/unit/test_redis_storage.py (23 passing tests)\n\nTests: ✅ 23/23 passed\nReady for Edit Engine integration\n\nTrello: https://trello.com/c/EvTCvPpE (Phase 1: Core Infrastructure)",
+            "tree": {
+              "sha": "8f66cfab6e4fcca98e7a5edd45a279c41aefabe0",
+              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/8f66cfab6e4fcca98e7a5edd45a279c41aefabe0"
+            },
+            "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/74f2ea9600109c8295e19fd672f6b8062567e3ad",
+            "comment_count": 0,
+            "verification": {
+              "verified": false,
+              "reason": "unsigned",
+              "signature": null,
+              "payload": null,
+              "verified_at": null
+            }
+          },
+          "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/74f2ea9600109c8295e19fd672f6b8062567e3ad",
+          "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/74f2ea9600109c8295e19fd672f6b8062567e3ad",
+          "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/74f2ea9600109c8295e19fd672f6b8062567e3ad/comments",
+          "author": null,
+          "committer": null,
+          "parents": [
+            {
+              "sha": "0056f526b610e5f16dd9e5acfd18957012df9bcc",
+              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/0056f526b610e5f16dd9e5acfd18957012df9bcc",
+              "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/0056f526b610e5f16dd9e5acfd18957012df9bcc"
+            }
+          ]
+        },
         {
           "sha": "0056f526b610e5f16dd9e5acfd18957012df9bcc",
           "node_id": "C_kwDORGbSutoAKDAwNTZmNTI2YjYxMGU1ZjE2ZGQ5ZTVhY2ZkMTg5NTcwMTJkZjliY2M",
@@ -129,90 +213,6 @@
               "sha": "6d76fcaade5eb924001e9de6da6e880d716d2d4a",
               "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/6d76fcaade5eb924001e9de6da6e880d716d2d4a",
               "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/6d76fcaade5eb924001e9de6da6e880d716d2d4a"
-            }
-          ]
-        },
-        {
-          "sha": "6d76fcaade5eb924001e9de6da6e880d716d2d4a",
-          "node_id": "C_kwDORGbSutoAKDZkNzZmY2FhZGU1ZWI5MjQwMDFlOWRlNmRhNmU4ODBkNzE2ZDJkNGE",
-          "commit": {
-            "author": {
-              "name": "ASPEN",
-              "email": "aspen@axovia.ai",
-              "date": "2026-02-04T20:48:09Z"
-            },
-            "committer": {
-              "name": "ASPEN",
-              "email": "aspen@axovia.ai",
-              "date": "2026-02-04T20:48:09Z"
-            },
-            "message": "✅ Add comprehensive tests for UpgradePrompt component (33 tests covering modal, banner, billing toggle, and all plan features)",
-            "tree": {
-              "sha": "ce816196b76590fa74d11f685433445d34295bca",
-              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/ce816196b76590fa74d11f685433445d34295bca"
-            },
-            "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/6d76fcaade5eb924001e9de6da6e880d716d2d4a",
-            "comment_count": 0,
-            "verification": {
-              "verified": false,
-              "reason": "unsigned",
-              "signature": null,
-              "payload": null,
-              "verified_at": null
-            }
-          },
-          "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/6d76fcaade5eb924001e9de6da6e880d716d2d4a",
-          "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/6d76fcaade5eb924001e9de6da6e880d716d2d4a",
-          "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/6d76fcaade5eb924001e9de6da6e880d716d2d4a/comments",
-          "author": null,
-          "committer": null,
-          "parents": [
-            {
-              "sha": "9d4182955c45abba086f7ea76067e6793200e5c0",
-              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/9d4182955c45abba086f7ea76067e6793200e5c0",
-              "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/9d4182955c45abba086f7ea76067e6793200e5c0"
-            }
-          ]
-        },
-        {
-          "sha": "9d4182955c45abba086f7ea76067e6793200e5c0",
-          "node_id": "C_kwDORGbSutoAKDlkNDE4Mjk1NWM0NWFiYmEwODZmN2VhNzYwNjdlNjc5MzIwMGU1YzA",
-          "commit": {
-            "author": {
-              "name": "ASPEN",
-              "email": "aspen@axovia.ai",
-              "date": "2026-02-04T20:46:17Z"
-            },
-            "committer": {
-              "name": "ASPEN",
-              "email": "aspen@axovia.ai",
-              "date": "2026-02-04T20:46:17Z"
-            },
-            "message": "✅ Add comprehensive tests for UsageMeter component (31 tests covering all states and edge cases)",
-            "tree": {
-              "sha": "a72bfae0e57395b159e916a55de8f9bc58d61ec5",
-              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/a72bfae0e57395b159e916a55de8f9bc58d61ec5"
-            },
-            "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/9d4182955c45abba086f7ea76067e6793200e5c0",
-            "comment_count": 0,
-            "verification": {
-              "verified": false,
-              "reason": "unsigned",
-              "signature": null,
-              "payload": null,
-              "verified_at": null
-            }
-          },
-          "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/9d4182955c45abba086f7ea76067e6793200e5c0",
-          "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/9d4182955c45abba086f7ea76067e6793200e5c0",
-          "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/9d4182955c45abba086f7ea76067e6793200e5c0/comments",
-          "author": null,
-          "committer": null,
-          "parents": [
-            {
-              "sha": "e269d55dffafe395577af997df8b3163d45fe3c6",
-              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/e269d55dffafe395577af997df8b3163d45fe3c6",
-              "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/e269d55dffafe395577af997df8b3163d45fe3c6"
             }
           ]
         }
