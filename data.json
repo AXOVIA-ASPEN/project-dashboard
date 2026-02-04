@@ -1,11 +1,53 @@
 {
-  "updatedAt": "2026-02-04T13:21:39Z",
+  "updatedAt": "2026-02-04T14:12:27Z",
   "repos": [
     {
       "owner": "Axovia-AI",
       "repo": "docmind-ai",
       "name": "Docmind AI",
       "commits": [
+        {
+          "sha": "0070e147f362a7f8fa1a7e48082cefad10169de0",
+          "node_id": "C_kwDORGbSutoAKDAwNzBlMTQ3ZjM2MmE3ZjhmYTFhN2U0ODA4MmNlZmFkMTAxNjlkZTA",
+          "commit": {
+            "author": {
+              "name": "ASPEN",
+              "email": "aspen@axovia.ai",
+              "date": "2026-02-04T14:04:47Z"
+            },
+            "committer": {
+              "name": "ASPEN",
+              "email": "aspen@axovia.ai",
+              "date": "2026-02-04T14:04:47Z"
+            },
+            "message": "✅ [VERIFICATION] Implement BaselineCaptureService (pdf2image + hashing)\n\n- Created comprehensive BaselineCaptureService for post-download verification\n- Supports PDF to image conversion at 150 DPI with configurable max dimensions\n- Generates multiple hash types: SHA256, perceptual (pHash), difference (dHash), average (aHash)\n- Extracts text fingerprints using PyMuPDF for content verification\n- Implements tiered storage strategy: Redis for metadata/hashes, S3 for images\n- Includes abstract BaselineStorage interface for different storage backends\n- Added MemoryBaselineStorage for testing purposes\n- Proper error handling, logging, and TTL management (24h auto-expiry)\n- Full docstrings and type hints following project conventions\n- Ready for integration with verification agent ensemble\n\nBased on specifications in planning/POST_DOWNLOAD_VERIFICATION.md\nTask: Trello card #69800638f7c3aa36fd402a72",
+            "tree": {
+              "sha": "b42e79ba7c052ec116b2a80e5a9a31f15689e8a3",
+              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/b42e79ba7c052ec116b2a80e5a9a31f15689e8a3"
+            },
+            "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/0070e147f362a7f8fa1a7e48082cefad10169de0",
+            "comment_count": 0,
+            "verification": {
+              "verified": false,
+              "reason": "unsigned",
+              "signature": null,
+              "payload": null,
+              "verified_at": null
+            }
+          },
+          "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/0070e147f362a7f8fa1a7e48082cefad10169de0",
+          "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/0070e147f362a7f8fa1a7e48082cefad10169de0",
+          "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/0070e147f362a7f8fa1a7e48082cefad10169de0/comments",
+          "author": null,
+          "committer": null,
+          "parents": [
+            {
+              "sha": "8b3238dc8f0c5240aed1fc04884683cdebbb3431",
+              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/8b3238dc8f0c5240aed1fc04884683cdebbb3431",
+              "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/8b3238dc8f0c5240aed1fc04884683cdebbb3431"
+            }
+          ]
+        },
         {
           "sha": "8b3238dc8f0c5240aed1fc04884683cdebbb3431",
           "node_id": "C_kwDORGbSutoAKDhiMzIzOGRjOGYwYzUyNDBhZWQxZmMwNDg4NDY4M2NkZWJiYjM0MzE",
@@ -171,48 +213,6 @@
               "sha": "489c67b290651d4c0809de9ea7f3973dc14c8ac7",
               "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/489c67b290651d4c0809de9ea7f3973dc14c8ac7",
               "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/489c67b290651d4c0809de9ea7f3973dc14c8ac7"
-            }
-          ]
-        },
-        {
-          "sha": "489c67b290651d4c0809de9ea7f3973dc14c8ac7",
-          "node_id": "C_kwDORGbSutoAKDQ4OWM2N2IyOTA2NTFkNGMwODA5ZGU5ZWE3ZjM5NzNkYzE0YzhhYzc",
-          "commit": {
-            "author": {
-              "name": "ASPEN",
-              "email": "aspen@axovia.ai",
-              "date": "2026-02-03T07:07:52Z"
-            },
-            "committer": {
-              "name": "ASPEN",
-              "email": "aspen@axovia.ai",
-              "date": "2026-02-03T07:07:52Z"
-            },
-            "message": "✅ [MARKETING] Add social media content calendar",
-            "tree": {
-              "sha": "c3a984d4c4f195046c92219cbc96469ffab3cdbf",
-              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/c3a984d4c4f195046c92219cbc96469ffab3cdbf"
-            },
-            "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/489c67b290651d4c0809de9ea7f3973dc14c8ac7",
-            "comment_count": 0,
-            "verification": {
-              "verified": false,
-              "reason": "unsigned",
-              "signature": null,
-              "payload": null,
-              "verified_at": null
-            }
-          },
-          "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/489c67b290651d4c0809de9ea7f3973dc14c8ac7",
-          "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/489c67b290651d4c0809de9ea7f3973dc14c8ac7",
-          "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/489c67b290651d4c0809de9ea7f3973dc14c8ac7/comments",
-          "author": null,
-          "committer": null,
-          "parents": [
-            {
-              "sha": "91ded32df600abb5ec3de2ff1bb1aa4e8fee95b7",
-              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/91ded32df600abb5ec3de2ff1bb1aa4e8fee95b7",
-              "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/91ded32df600abb5ec3de2ff1bb1aa4e8fee95b7"
             }
           ]
         }
