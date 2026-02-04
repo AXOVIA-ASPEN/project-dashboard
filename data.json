@@ -1,11 +1,137 @@
 {
-  "updatedAt": "2026-02-04T19:02:41Z",
+  "updatedAt": "2026-02-04T19:48:36Z",
   "repos": [
     {
       "owner": "Axovia-AI",
       "repo": "docmind-ai",
       "name": "Docmind AI",
       "commits": [
+        {
+          "sha": "29a6d6f00fa9c515c4356a5a01b231cf9f08898f",
+          "node_id": "C_kwDORGbSutoAKDI5YTZkNmYwMGZhOWM1MTVjNDM1NmE1YTAxYjIzMWNmOWYwODg5OGY",
+          "commit": {
+            "author": {
+              "name": "ASPEN",
+              "email": "aspen@axovia.ai",
+              "date": "2026-02-04T19:48:28Z"
+            },
+            "committer": {
+              "name": "ASPEN",
+              "email": "aspen@axovia.ai",
+              "date": "2026-02-04T19:48:28Z"
+            },
+            "message": "✅ Create CorruptionSimulator test utilities\n\n- Built comprehensive PDF corruption simulator for testing download verification\n- Supports 8 corruption types: header, truncation, bit flip, xref, EOF, null bytes, objects, page tree\n- Configurable severity (0.0-1.0) and seeded RNG for reproducibility\n- Full test suite with 15 passing tests\n- Includes detailed README with usage examples\n- Exports via src/lib/testing/index.ts\n\nCard: https://trello.com/c/d3n5p8Zb",
+            "tree": {
+              "sha": "4f5fd5e72dc8515c5acd960de1c7533de22e764f",
+              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/4f5fd5e72dc8515c5acd960de1c7533de22e764f"
+            },
+            "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/29a6d6f00fa9c515c4356a5a01b231cf9f08898f",
+            "comment_count": 0,
+            "verification": {
+              "verified": false,
+              "reason": "unsigned",
+              "signature": null,
+              "payload": null,
+              "verified_at": null
+            }
+          },
+          "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/29a6d6f00fa9c515c4356a5a01b231cf9f08898f",
+          "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/29a6d6f00fa9c515c4356a5a01b231cf9f08898f",
+          "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/29a6d6f00fa9c515c4356a5a01b231cf9f08898f/comments",
+          "author": null,
+          "committer": null,
+          "parents": [
+            {
+              "sha": "b16f62b12abcedcc86112daa59445a803334de5b",
+              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/b16f62b12abcedcc86112daa59445a803334de5b",
+              "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/b16f62b12abcedcc86112daa59445a803334de5b"
+            }
+          ]
+        },
+        {
+          "sha": "b16f62b12abcedcc86112daa59445a803334de5b",
+          "node_id": "C_kwDORGbSutoAKGIxNmY2MmIxMmFiY2VkY2M4NjExMmRhYTU5NDQ1YTgwMzMzNGRlNWI",
+          "commit": {
+            "author": {
+              "name": "ASPEN",
+              "email": "aspen@axovia.ai",
+              "date": "2026-02-04T19:29:25Z"
+            },
+            "committer": {
+              "name": "ASPEN",
+              "email": "aspen@axovia.ai",
+              "date": "2026-02-04T19:29:25Z"
+            },
+            "message": "✅ Create comprehensive unit tests for PixelDiffAgent (27 test cases)\n\n- Test suite covers initialization, identical/different images, multi-page docs\n- Includes configuration variations, edge cases, and metrics validation\n- BLOCKED: Requires skimage for proper SSIM calculation or fix to _simple_similarity fallback\n- Test file ready at apps/api/tests/test_pixel_diff_agent.py\n\nRelated Trello card #127 moved to Icebox until dependency/implementation issue resolved",
+            "tree": {
+              "sha": "5c7e6f614d8b58ad8bb2104a36a5e8fea42e5431",
+              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/5c7e6f614d8b58ad8bb2104a36a5e8fea42e5431"
+            },
+            "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/b16f62b12abcedcc86112daa59445a803334de5b",
+            "comment_count": 0,
+            "verification": {
+              "verified": false,
+              "reason": "unsigned",
+              "signature": null,
+              "payload": null,
+              "verified_at": null
+            }
+          },
+          "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/b16f62b12abcedcc86112daa59445a803334de5b",
+          "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/b16f62b12abcedcc86112daa59445a803334de5b",
+          "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/b16f62b12abcedcc86112daa59445a803334de5b/comments",
+          "author": null,
+          "committer": null,
+          "parents": [
+            {
+              "sha": "3c6e074eaeeb9156014a926d85ed0428f604d61a",
+              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/3c6e074eaeeb9156014a926d85ed0428f604d61a",
+              "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/3c6e074eaeeb9156014a926d85ed0428f604d61a"
+            }
+          ]
+        },
+        {
+          "sha": "3c6e074eaeeb9156014a926d85ed0428f604d61a",
+          "node_id": "C_kwDORGbSutoAKDNjNmUwNzRlYWVlYjkxNTYwMTRhOTI2ZDg1ZWQwNDI4ZjYwNGQ2MWE",
+          "commit": {
+            "author": {
+              "name": "ASPEN",
+              "email": "aspen@axovia.ai",
+              "date": "2026-02-04T19:09:07Z"
+            },
+            "committer": {
+              "name": "ASPEN",
+              "email": "aspen@axovia.ai",
+              "date": "2026-02-04T19:09:07Z"
+            },
+            "message": "✅ Configure agent thresholds and weights (#104)\n\n- Created centralized verification_config.py module\n- Implemented 4 configuration profiles: STRICT, BALANCED, LENIENT, DEVELOPMENT\n- Added PixelDiffThresholds, PerceptualHashThresholds, VisionLLMThresholds\n- Added ConsensusWeights with automatic validation/normalization\n- Added RenderingToleranceConfig and BaselineStorageConfig\n- Environment variable support for all settings\n- Global singleton pattern with get/set/reset functions\n- Comprehensive documentation in CONFIG.md\n- Updated verification/__init__.py exports\n- Added unit tests (test_verification_config.py)\n\nAll profiles tested and working. Configuration system provides single\nsource of truth for all verification thresholds and agent weights.\n\nCard: https://trello.com/c/eE2dsbRz/104-configure-agent-thresholds-and-weights\nAuthor: ASPEN 🌲\nCompany: Axovia AI\nDate: 2026-02-04",
+            "tree": {
+              "sha": "13f8da717aad1221f20e1ccf7e279849965f1367",
+              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/13f8da717aad1221f20e1ccf7e279849965f1367"
+            },
+            "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/3c6e074eaeeb9156014a926d85ed0428f604d61a",
+            "comment_count": 0,
+            "verification": {
+              "verified": false,
+              "reason": "unsigned",
+              "signature": null,
+              "payload": null,
+              "verified_at": null
+            }
+          },
+          "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/3c6e074eaeeb9156014a926d85ed0428f604d61a",
+          "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/3c6e074eaeeb9156014a926d85ed0428f604d61a",
+          "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/3c6e074eaeeb9156014a926d85ed0428f604d61a/comments",
+          "author": null,
+          "committer": null,
+          "parents": [
+            {
+              "sha": "0882394ea88935237bd3db27142eedf7ab717779",
+              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/0882394ea88935237bd3db27142eedf7ab717779",
+              "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/0882394ea88935237bd3db27142eedf7ab717779"
+            }
+          ]
+        },
         {
           "sha": "0882394ea88935237bd3db27142eedf7ab717779",
           "node_id": "C_kwDORGbSutoAKDA4ODIzOTRlYTg4OTM1MjM3YmQzZGIyNzE0MmVlZGY3YWI3MTc3Nzk",
@@ -87,132 +213,6 @@
               "sha": "f00d841eb1b46c3d0c34c1f0750d6e34e2b26010",
               "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/f00d841eb1b46c3d0c34c1f0750d6e34e2b26010",
               "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/f00d841eb1b46c3d0c34c1f0750d6e34e2b26010"
-            }
-          ]
-        },
-        {
-          "sha": "f00d841eb1b46c3d0c34c1f0750d6e34e2b26010",
-          "node_id": "C_kwDORGbSutoAKGYwMGQ4NDFlYjFiNDZjM2QwYzM0YzFmMDc1MGQ2ZTM0ZTJiMjYwMTA",
-          "commit": {
-            "author": {
-              "name": "ASPEN",
-              "email": "aspen@axovia.ai",
-              "date": "2026-02-04T18:08:57Z"
-            },
-            "committer": {
-              "name": "ASPEN",
-              "email": "aspen@axovia.ai",
-              "date": "2026-02-04T18:08:57Z"
-            },
-            "message": "✅ [RESEARCH] Complete font handling edge cases analysis\n\n- Comprehensive 17KB document covering all font types and edge cases\n- Embedded vs subsetted vs non-embedded font challenges\n- CID font ToUnicode mapping issues\n- Multi-language and BiDi text handling\n- PyMuPDF-specific considerations\n- Actionable implementation recommendations for Docmind\n- Testing matrix and verification checkpoints\n\nAddresses Trello card #77",
-            "tree": {
-              "sha": "1a9a65853dbd198fd37d03159d85a7b54f874e8e",
-              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/1a9a65853dbd198fd37d03159d85a7b54f874e8e"
-            },
-            "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/f00d841eb1b46c3d0c34c1f0750d6e34e2b26010",
-            "comment_count": 0,
-            "verification": {
-              "verified": false,
-              "reason": "unsigned",
-              "signature": null,
-              "payload": null,
-              "verified_at": null
-            }
-          },
-          "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/f00d841eb1b46c3d0c34c1f0750d6e34e2b26010",
-          "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/f00d841eb1b46c3d0c34c1f0750d6e34e2b26010",
-          "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/f00d841eb1b46c3d0c34c1f0750d6e34e2b26010/comments",
-          "author": null,
-          "committer": null,
-          "parents": [
-            {
-              "sha": "b62761821f7c81fcf5ef9fce31f731b47606b71c",
-              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/b62761821f7c81fcf5ef9fce31f731b47606b71c",
-              "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/b62761821f7c81fcf5ef9fce31f731b47606b71c"
-            }
-          ]
-        },
-        {
-          "sha": "b62761821f7c81fcf5ef9fce31f731b47606b71c",
-          "node_id": "C_kwDORGbSutoAKGI2Mjc2MTgyMWY3YzgxZmNmNWVmOWZjZTMxZjczMWI0NzYwNmI3MWM",
-          "commit": {
-            "author": {
-              "name": "ASPEN",
-              "email": "aspen@axovia.ai",
-              "date": "2026-02-04T17:50:02Z"
-            },
-            "committer": {
-              "name": "ASPEN",
-              "email": "aspen@axovia.ai",
-              "date": "2026-02-04T17:50:02Z"
-            },
-            "message": "✅ [DOCS] Comprehensive verification system README\n\n- Documented all 4 verification agents (Content, Scope, Visual, Semantic)\n- Added Python and TypeScript component examples\n- Explained consensus mechanism with weights and thresholds\n- Included configuration guide and environment variables\n- Added troubleshooting section for common issues\n- Documented performance benchmarks and optimization strategies\n- Listed testing approaches (unit, integration, VCR cassettes)\n- Outlined future post-download verification architecture\n\nTotal: 14KB of documentation for the verification module",
-            "tree": {
-              "sha": "f543f11567363104f40067a06cc75174283b9afa",
-              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/f543f11567363104f40067a06cc75174283b9afa"
-            },
-            "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/b62761821f7c81fcf5ef9fce31f731b47606b71c",
-            "comment_count": 0,
-            "verification": {
-              "verified": false,
-              "reason": "unsigned",
-              "signature": null,
-              "payload": null,
-              "verified_at": null
-            }
-          },
-          "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/b62761821f7c81fcf5ef9fce31f731b47606b71c",
-          "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/b62761821f7c81fcf5ef9fce31f731b47606b71c",
-          "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/b62761821f7c81fcf5ef9fce31f731b47606b71c/comments",
-          "author": null,
-          "committer": null,
-          "parents": [
-            {
-              "sha": "4293fd2852f0fa2001304048d1d2be7a687e32f5",
-              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/4293fd2852f0fa2001304048d1d2be7a687e32f5",
-              "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/4293fd2852f0fa2001304048d1d2be7a687e32f5"
-            }
-          ]
-        },
-        {
-          "sha": "4293fd2852f0fa2001304048d1d2be7a687e32f5",
-          "node_id": "C_kwDORGbSutoAKDQyOTNmZDI4NTJmMGZhMjAwMTMwNDA0OGQxZDJiZTdhNjg3ZTMyZjU",
-          "commit": {
-            "author": {
-              "name": "ASPEN",
-              "email": "aspen@axovia.ai",
-              "date": "2026-02-04T17:30:21Z"
-            },
-            "committer": {
-              "name": "ASPEN",
-              "email": "aspen@axovia.ai",
-              "date": "2026-02-04T17:30:21Z"
-            },
-            "message": "✅ [COVERAGE] Enhanced CI coverage gates with strict validation\n\n- Made frontend coverage check a hard requirement (fail if file missing)\n- Added error annotations for better visibility on PR failures\n- Enhanced coverage-gate job with actual coverage parsing and summary\n- Added comprehensive COVERAGE_GATES.md documentation\n- Both backend and frontend now have strict 90% coverage requirements\n\nCloses Trello card #75",
-            "tree": {
-              "sha": "b212d1414ce3cd83b8ea6dc1bcd89de4e72cd8c6",
-              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/b212d1414ce3cd83b8ea6dc1bcd89de4e72cd8c6"
-            },
-            "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/4293fd2852f0fa2001304048d1d2be7a687e32f5",
-            "comment_count": 0,
-            "verification": {
-              "verified": false,
-              "reason": "unsigned",
-              "signature": null,
-              "payload": null,
-              "verified_at": null
-            }
-          },
-          "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/4293fd2852f0fa2001304048d1d2be7a687e32f5",
-          "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/4293fd2852f0fa2001304048d1d2be7a687e32f5",
-          "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/4293fd2852f0fa2001304048d1d2be7a687e32f5/comments",
-          "author": null,
-          "committer": null,
-          "parents": [
-            {
-              "sha": "a85039d8839156f3c153ba37cc3ba9ba2d417397",
-              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/a85039d8839156f3c153ba37cc3ba9ba2d417397",
-              "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/a85039d8839156f3c153ba37cc3ba9ba2d417397"
             }
           ]
         }
