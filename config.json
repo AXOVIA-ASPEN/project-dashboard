@@ -1,0 +1,34 @@
+{
+  \"projects\": {
+    \"docmind\": {
+      \"name\": \"Docmind\",
+      \"owner\": \"Axovia-AI\",
+      \"repo\": \"docmind-ai\",
+      \"trelloBoard\": \"https://trello.com/b/NVmzMnCV/docmind-ai-pdf-editor\",
+      \"trelloBoardId\": \"698005f82ddaf0c414e1c878\"
+    },
+    \"flipper\": {
+      \"name\": \"Flipper AI\",
+      \"owner\": \"AXOVIA-ASPEN\",
+      \"repo\": \"flipper-ai\",
+      \"trelloBoard\": \"https://trello.com/b/SvVRLeS5\",
+      \"trelloBoardId\": \"6981a02b9b98365fdeb2a6ef\"
+    },
+    \"n8n\": {
+      \"name\": \"n8n-server\",
+      \"owner\": \"AXOVIA-ASPEN\",
+      \"repo\": \"n8n-server\",
+      \"trelloBoard\": \"https://trello.com/b/4zRlQQMi/n8n-server\",
+      \"trelloBoardId\": \"69842deae68296190846b0f0\"
+    },
+    \"real-random-dev-portal\": {
+      \"name\": \"Real Random Developer Portal\",
+      \"owner\": \"AXOVIA-ASPEN\",
+      \"repo\": \"real-random-dev-portal\",
+      \"trelloBoard\": \"https://trello.com/b/oN003rAx/real-random-developer-portal\",
+      \"trelloBoardId\": \"69847513c41f498e8478c2c2\"
+    }
+  },
+  \"multiProject\": true,
+  \"features\": [\"sprints\", \"coverage\", \"commits\", \"blockers\"]
+}

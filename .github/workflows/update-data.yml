@@ -59,14 +59,18 @@ jobs:
           docmind=$(fetch_repo "Axovia-AI" "docmind-ai" "$AXOVIA_AI_TOKEN" "Docmind AI")
           website=$(fetch_repo "Axovia-AI" "axovia-website" "$AXOVIA_AI_TOKEN" "Axovia Website")
           flipper=$(fetch_repo "AXOVIA-ASPEN" "flipper-ai" "$AXOVIA_ASPEN_TOKEN" "Flipper AI")
+          n8n=$(fetch_repo "AXOVIA-ASPEN" "n8n-server" "$AXOVIA_ASPEN_TOKEN" "n8n Server")
+          rrdp=$(fetch_repo "AXOVIA-ASPEN" "real-random-dev-portal" "$AXOVIA_ASPEN_TOKEN" "Real Random Dev Portal")
           
           # Combine into final JSON
           jq -n \
             --arg updatedAt "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
             --argjson docmind "$docmind" \
             --argjson website "$website" \
-            --argjson flipper "$flipper" \
-            '{updatedAt: $updatedAt, repos: [$docmind, $website, $flipper]}' > data.json
+            --argjson flipper "$flipper" \\
+            --argjson n8n "$n8n" \\
+            --argjson rrdp "$rrdp" \
+            '{updatedAt: $updatedAt, repos: [$docmind, $website, $flipper, $n8n, $rrdp]}' > data.json
           
           echo "Generated data.json:"
           jq '.updatedAt, (.repos[] | "\(.name): \(.runs.workflow_runs[0].conclusion // "no CI")")' data.json
