@@ -1,11 +1,95 @@
 {
-  "updatedAt": "2026-02-05T06:39:22Z",
+  "updatedAt": "2026-02-05T07:38:56Z",
   "repos": [
     {
       "owner": "Axovia-AI",
       "repo": "docmind-ai",
       "name": "Docmind AI",
       "commits": [
+        {
+          "sha": "233a7ed3c482ad5678e8fabdefb991e262d7eb4b",
+          "node_id": "C_kwDORGbSutoAKDIzM2E3ZWQzYzQ4MmFkNTY3OGU4ZmFiZGVmYjk5MWUyNjJkN2ViNGI",
+          "commit": {
+            "author": {
+              "name": "ASPEN",
+              "email": "aspen@axovia.ai",
+              "date": "2026-02-05T07:00:19Z"
+            },
+            "committer": {
+              "name": "ASPEN",
+              "email": "aspen@axovia.ai",
+              "date": "2026-02-05T07:00:19Z"
+            },
+            "message": "✅ Security review: tamper detection & replay prevention\n\n- Created comprehensive security hardening document\n- Covers baseline integrity protection (HMAC signing)\n- Implements replay attack prevention (nonce validation)\n- Adds audit logging and anomaly detection\n- Includes certificate validation and key rotation\n- Provides test suite and incident response procedures\n- Aligned with OWASP Top 10 and NIST standards\n\nFile: planning/SECURITY_REVIEW_POST_DOWNLOAD.md",
+            "tree": {
+              "sha": "5f6cf4f842d14639ac95771611902de1fde9315b",
+              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/5f6cf4f842d14639ac95771611902de1fde9315b"
+            },
+            "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/233a7ed3c482ad5678e8fabdefb991e262d7eb4b",
+            "comment_count": 0,
+            "verification": {
+              "verified": false,
+              "reason": "unsigned",
+              "signature": null,
+              "payload": null,
+              "verified_at": null
+            }
+          },
+          "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/233a7ed3c482ad5678e8fabdefb991e262d7eb4b",
+          "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/233a7ed3c482ad5678e8fabdefb991e262d7eb4b",
+          "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/233a7ed3c482ad5678e8fabdefb991e262d7eb4b/comments",
+          "author": null,
+          "committer": null,
+          "parents": [
+            {
+              "sha": "466d10bed702ea80f6373090a81d5c7a7d2d9e42",
+              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/466d10bed702ea80f6373090a81d5c7a7d2d9e42",
+              "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/466d10bed702ea80f6373090a81d5c7a7d2d9e42"
+            }
+          ]
+        },
+        {
+          "sha": "466d10bed702ea80f6373090a81d5c7a7d2d9e42",
+          "node_id": "C_kwDORGbSutoAKDQ2NmQxMGJlZDcwMmVhODBmNjM3MzA5MGE4MWQ1YzdhN2QyZDllNDI",
+          "commit": {
+            "author": {
+              "name": "ASPEN",
+              "email": "aspen@axovia.ai",
+              "date": "2026-02-05T06:39:50Z"
+            },
+            "committer": {
+              "name": "ASPEN",
+              "email": "aspen@axovia.ai",
+              "date": "2026-02-05T06:39:50Z"
+            },
+            "message": "✅ Complete agent_failure_recovery tests - 70% coverage achieved\n\nTest Results:\n- ✅ 25/25 tests passing (100%)\n- 📊 Coverage: 0% → 70% for agent_failure_recovery.py\n- 📈 Overall backend coverage: 58% → 66% (+8%)\n\nTests Cover:\n- FailureType enum and classification\n- RetryConfig and CircuitBreakerConfig\n- CircuitBreaker state transitions (CLOSED → OPEN → HALF_OPEN)\n- AgentFailureRecovery core methods\n  * execute_with_recovery (success, retry, exhaustion)\n  * calculate_delay (exponential backoff + jitter)\n  * classify_failure (timeout, network, API, etc.)\n  * should_retry logic\n- FallbackStrategy hash comparison\n- with_agent_recovery decorator\n- Integration test (recovery + circuit breaker)\n\nProgress toward 90% coverage goal: 66/90 (73% of goal)",
+            "tree": {
+              "sha": "ba4f1ae0dc37781e0be1f3f205b3c1ab12a1d62b",
+              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/ba4f1ae0dc37781e0be1f3f205b3c1ab12a1d62b"
+            },
+            "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/466d10bed702ea80f6373090a81d5c7a7d2d9e42",
+            "comment_count": 0,
+            "verification": {
+              "verified": false,
+              "reason": "unsigned",
+              "signature": null,
+              "payload": null,
+              "verified_at": null
+            }
+          },
+          "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/466d10bed702ea80f6373090a81d5c7a7d2d9e42",
+          "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/466d10bed702ea80f6373090a81d5c7a7d2d9e42",
+          "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/466d10bed702ea80f6373090a81d5c7a7d2d9e42/comments",
+          "author": null,
+          "committer": null,
+          "parents": [
+            {
+              "sha": "473640a00a9b09787b854b40e9ebd48b0640719c",
+              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/473640a00a9b09787b854b40e9ebd48b0640719c",
+              "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/473640a00a9b09787b854b40e9ebd48b0640719c"
+            }
+          ]
+        },
         {
           "sha": "473640a00a9b09787b854b40e9ebd48b0640719c",
           "node_id": "C_kwDORGbSutoAKDQ3MzY0MGEwMGE5YjA5Nzg3Yjg1NGI0MGU5ZWJkNDhiMDY0MDcxOWM",
@@ -129,90 +213,6 @@
               "sha": "14958ecf064a6586905f0650cfda174294cfdca0",
               "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/14958ecf064a6586905f0650cfda174294cfdca0",
               "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/14958ecf064a6586905f0650cfda174294cfdca0"
-            }
-          ]
-        },
-        {
-          "sha": "14958ecf064a6586905f0650cfda174294cfdca0",
-          "node_id": "C_kwDORGbSutoAKDE0OTU4ZWNmMDY0YTY1ODY5MDVmMDY1MGNmZGExNzQyOTRjZmRjYTA",
-          "commit": {
-            "author": {
-              "name": "ASPEN",
-              "email": "aspen@axovia.ai",
-              "date": "2026-02-05T05:18:19Z"
-            },
-            "committer": {
-              "name": "ASPEN",
-              "email": "aspen@axovia.ai",
-              "date": "2026-02-05T05:18:19Z"
-            },
-            "message": "✅ Implement large document sampling (10+ pages)\n\n- Created PageSampler class with adaptive sampling strategies:\n  * ALL_PAGES: 1-5 pages (verify all)\n  * FIRST_LAST_RANDOM: 6-20 pages (strategic sampling)\n  * STATISTICAL: 20+ pages (~10% sampling)\n\n- Features:\n  * Reproducible sampling with optional random seeds\n  * Configurable thresholds and sample rates\n  * Time savings estimation\n  * Always includes first/last pages for coverage\n\n- Testing:\n  * 33 comprehensive unit tests (100% pass rate)\n  * Real-world scenarios validated\n  * Performance benchmarks included\n\n- Documentation:\n  * Full API reference in docs/PAGE_SAMPLING.md\n  * Interactive demo with usage examples\n  * Integration guide for verification service\n\n- Performance:\n  * 90% time savings on 100+ page documents\n  * 10x speedup with minimal confidence loss\n\nFiles:\n- backend/verification/page_sampler.py (implementation)\n- backend/verification/tests/test_page_sampler.py (tests)\n- backend/verification/examples/page_sampler_demo.py (demo)\n- docs/PAGE_SAMPLING.md (documentation)\n\nTrello: https://trello.com/c/wk5H4GT1",
-            "tree": {
-              "sha": "905247e47daf6c92002c6cdcacf8c4ed6789bc63",
-              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/905247e47daf6c92002c6cdcacf8c4ed6789bc63"
-            },
-            "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/14958ecf064a6586905f0650cfda174294cfdca0",
-            "comment_count": 0,
-            "verification": {
-              "verified": false,
-              "reason": "unsigned",
-              "signature": null,
-              "payload": null,
-              "verified_at": null
-            }
-          },
-          "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/14958ecf064a6586905f0650cfda174294cfdca0",
-          "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/14958ecf064a6586905f0650cfda174294cfdca0",
-          "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/14958ecf064a6586905f0650cfda174294cfdca0/comments",
-          "author": null,
-          "committer": null,
-          "parents": [
-            {
-              "sha": "7143fc43ac41b2846ffbdd07f11afc405825a921",
-              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/7143fc43ac41b2846ffbdd07f11afc405825a921",
-              "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/7143fc43ac41b2846ffbdd07f11afc405825a921"
-            }
-          ]
-        },
-        {
-          "sha": "7143fc43ac41b2846ffbdd07f11afc405825a921",
-          "node_id": "C_kwDORGbSutoAKDcxNDNmYzQzYWM0MWIyODQ2ZmZiZGQwN2YxMWFmYzQwNTgyNWE5MjE",
-          "commit": {
-            "author": {
-              "name": "ASPEN",
-              "email": "aspen@axovia.ai",
-              "date": "2026-02-05T04:56:45Z"
-            },
-            "committer": {
-              "name": "ASPEN",
-              "email": "aspen@axovia.ai",
-              "date": "2026-02-05T04:56:45Z"
-            },
-            "message": "✅ Fix import errors by removing duplicate backend/tests/ directory\n\n- Removed backend/tests/ which contained duplicate tests\n- Tests already exist in apps/api/tests/unit/\n- This fixes ImportError: attempted relative import beyond top-level package\n- Unblocks Backend 90% coverage task (Card #73)",
-            "tree": {
-              "sha": "5a149c69ea9e8b9cee5776302d37534dd03f8826",
-              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/trees/5a149c69ea9e8b9cee5776302d37534dd03f8826"
-            },
-            "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/git/commits/7143fc43ac41b2846ffbdd07f11afc405825a921",
-            "comment_count": 0,
-            "verification": {
-              "verified": false,
-              "reason": "unsigned",
-              "signature": null,
-              "payload": null,
-              "verified_at": null
-            }
-          },
-          "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/7143fc43ac41b2846ffbdd07f11afc405825a921",
-          "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/7143fc43ac41b2846ffbdd07f11afc405825a921",
-          "comments_url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/7143fc43ac41b2846ffbdd07f11afc405825a921/comments",
-          "author": null,
-          "committer": null,
-          "parents": [
-            {
-              "sha": "0268217b061d0428fcfee60131b0e41b6ba43eae",
-              "url": "https://api.github.com/repos/Axovia-AI/docmind-ai/commits/0268217b061d0428fcfee60131b0e41b6ba43eae",
-              "html_url": "https://github.com/Axovia-AI/docmind-ai/commit/0268217b061d0428fcfee60131b0e41b6ba43eae"
             }
           ]
         }
